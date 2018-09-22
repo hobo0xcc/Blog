@@ -19,7 +19,7 @@
       <guid>https://hobo0xcc.github.io/Blog/posts/helloworld/</guid>
       <description> Hello, world! nice to meet you!
 syntax highlightのテスト
-#include &amp;lt;stdio.h&amp;gt; int main() { printf(&amp;quot;Hello, world!&amp;quot;); }  </description>
+#include &amp;lt;stdio.h&amp;gt;int main() {printf(&amp;#34;Hello, world!&amp;#34;);}  </description>
     </item>
     
   </channel>

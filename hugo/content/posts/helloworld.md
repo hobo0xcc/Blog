@@ -8,10 +8,10 @@ nice to meet you!
 
 syntax highlightのテスト
 
-```cpp
+{{<highlight cpp>}}
 #include <stdio.h>
 
 int main() {
     printf("Hello, world!");
 }
-```
+{{</highlight>}}
