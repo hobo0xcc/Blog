@@ -4,3 +4,6 @@
 [submodule "hugo/themes/basics"]
 	path = hugo/themes/basics
 	url = https://github.com/arjunkrishnababu96/basics.git
+[submodule "hugo/themes/docdock"]
+	path = hugo/themes/docdock
+	url = https://github.com/vjeantet/hugo-theme-docdock.git
