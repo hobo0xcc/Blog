@@ -3,12 +3,24 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://hobo0xcc.github.io/Blog/posts/helloworld/</loc>
+    <lastmod>2018-09-22T18:07:53+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://hobo0xcc.github.io/Blog/categories/</loc>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://hobo0xcc.github.io/Blog/</loc>
+    <lastmod>2018-09-22T18:07:53+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://hobo0xcc.github.io/Blog/posts/</loc>
+    <lastmod>2018-09-22T18:07:53+09:00</lastmod>
     <priority>0</priority>
   </url>
   
