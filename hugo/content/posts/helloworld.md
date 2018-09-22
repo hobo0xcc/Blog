@@ -5,3 +5,13 @@ draft: false
 ---
 # Hello, world!
 nice to meet you!
+
+syntax highlightのテスト
+
+```cpp
+#include <stdio.h>
+
+int main() {
+    printf("Hello, world!");
+}
+```

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on My Blog</title>
+    <title>Posts on ほぼ適当</title>
     <link>https://hobo0xcc.github.io/Blog/posts/</link>
-    <description>Recent content in Posts on My Blog</description>
+    <description>Recent content in Posts on ほぼ適当</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 22 Sep 2018 18:07:53 +0900</lastBuildDate>
@@ -17,7 +17,9 @@
       <pubDate>Sat, 22 Sep 2018 18:07:53 +0900</pubDate>
       
       <guid>https://hobo0xcc.github.io/Blog/posts/helloworld/</guid>
-      <description>Hello, world! nice to meet you!</description>
+      <description> Hello, world! nice to meet you!
+syntax highlightのテスト
+#include &amp;lt;stdio.h&amp;gt; int main() { printf(&amp;quot;Hello, world!&amp;quot;); }  </description>
     </item>
     
   </channel>
