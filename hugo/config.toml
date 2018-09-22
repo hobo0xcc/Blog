@@ -1,4 +1,4 @@
-theme = "basics"
+theme = "docdock"
 baseURL = "https://hobo0xcc.github.io/Blog/"
 languageCode = "en-us"
 title = "My Blog"
