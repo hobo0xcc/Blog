@@ -6,10 +6,20 @@
     <description>Recent content in Posts on ほぼ適当</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 22 Sep 2018 18:07:53 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 23 Sep 2018 19:10:51 +0900</lastBuildDate>
     
 	<atom:link href="https://hobo0xcc.github.io/Blog/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Memo</title>
+      <link>https://hobo0xcc.github.io/Blog/posts/memo/</link>
+      <pubDate>Sun, 23 Sep 2018 19:10:51 +0900</pubDate>
+      
+      <guid>https://hobo0xcc.github.io/Blog/posts/memo/</guid>
+      <description>ToDoや技術的なメモを書く。
+ TestLang7のコード生成とVMを書く。  </description>
+    </item>
     
     <item>
       <title>Hello, world!</title>

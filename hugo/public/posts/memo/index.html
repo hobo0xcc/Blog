@@ -6,7 +6,7 @@
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="generator" content="Hugo 0.48" />
-<title>Categories :: ほぼ適当</title>
+<title>Memo :: ほぼ適当</title>
 <link rel="shortcut icon" href="https://hobo0xcc.github.io/Blog/images/favicon.png" type="image/x-icon" />
 <link href="https://hobo0xcc.github.io/Blog/css/font-awesome.min.css" rel="stylesheet">
 <link href="https://hobo0xcc.github.io/Blog/css/nucleus.css" rel="stylesheet">
@@ -23,7 +23,7 @@
 
     
   </head>
-  <body data-url="/categories/">
+  <body data-url="/posts/memo/">
     
       <header>
   <div class="logo">
@@ -44,13 +44,14 @@
             <i class="fa fa-fw fa-home"></i>
           </a>
           </li>
-    <li data-nav-id="/posts/" class="dd-item haschildren
+    <li data-nav-id="/posts/" class="dd-item parent haschildren
         ">
       <div>
-      <a href="https://hobo0xcc.github.io/Blog/posts/">Posts</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      <a href="https://hobo0xcc.github.io/Blog/posts/">Posts</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="/posts/memo/" class="dd-item">
+      <li data-nav-id="/posts/memo/" class="dd-item active">
         <div>
           <a href="https://hobo0xcc.github.io/Blog/posts/memo/">
             Memo
@@ -81,7 +82,10 @@
         <select onchange="javascript:location.href = this.value;">
           
     <option value="/posts/" >
-   Posts</option>
+   Posts</option> 
+      <option value="/posts/memo/"  selected>- Memo</option>
+      <option value="/posts/helloworld/" >- Hello, world!</option>
+  
 
 
 
@@ -104,40 +108,23 @@
       </div>
     
 
-    <h1>Categories</h1>
+    <h1>Memo</h1>
     
     
     
+    <p>ToDoや技術的なメモを書く。</p>
 
-
-
-<div class="extra-pagination inner">
-<nav class="pagination" role="navigation">
-	
-	<span class="page-number">Page 1 of 0</span>
-	
-</nav>
-
-</div>
-
-
-
-<div style="margin-bottom:2rem"></div>
-
-<nav class="pagination" role="navigation">
-	
-	<span class="page-number">Page 1 of 0</span>
-	
-</nav>
-
-
+<ul>
+<li>TestLang7のコード生成とVMを書く。</li>
+</ul>
 
 
     
     
         <div class="chevrons">
     <div id="navigation">
-<a class="nav nav-next" href="https://hobo0xcc.github.io/Blog/posts/" title="Posts" style="margin-right: 0px;"><label>Posts</label><i class="fa fa-chevron-right"></i></a></div>
+<a class="nav nav-prev" href="https://hobo0xcc.github.io/Blog/posts/" title="Posts"> <i class="fa fa-chevron-left"></i><label>Posts</label></a>
+    <a class="nav nav-next" href="https://hobo0xcc.github.io/Blog/posts/helloworld/" title="Hello, world!" style="margin-right: 0px;"><label>Hello, world!</label><i class="fa fa-chevron-right"></i></a></div>
   </div>
 
   </section>
@@ -151,9 +138,13 @@
     
 
   
+    <div class="date">
+        <i class='fa fa-calendar'></i> Last update on 23/09/2018
+    </div>
+    
 
     <div class="github-link">
-      <a href="" target="blank"><i class="fa fa-code-fork"></i>
+      <a href="posts/memo.md" target="blank"><i class="fa fa-code-fork"></i>
         Improve this page</a>
     </div>
   </div>
