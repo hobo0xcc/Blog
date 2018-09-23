@@ -6,3 +6,4 @@ draft: true
 
 ToDoや技術的なメモを書く。
 
+- TestLang7のコード生成とVMを書く。
