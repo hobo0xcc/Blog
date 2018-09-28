@@ -4,3 +4,4 @@ languageCode = "en-us"
 title = "ほぼ適当"
 canonifyurls = true
 publishdir = "public"
+disqusShortname = "Hobo"
