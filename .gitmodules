@@ -7,3 +7,6 @@
 [submodule "hugo/themes/docdock"]
 	path = hugo/themes/docdock
 	url = https://github.com/vjeantet/hugo-theme-docdock.git
+[submodule "hugo/themes/hugo-base16-theme"]
+	path = hugo/themes/hugo-base16-theme
+	url = https://github.com/htdvisser/hugo-base16-theme.git
