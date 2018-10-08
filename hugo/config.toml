@@ -1,7 +1,7 @@
 theme = "hugo-base16-theme"
 baseURL = "https://hobo0xcc.github.io/Blog/"
 languageCode = "en-us"
-title = "ほぼ適当"
+title = "Hobo"
 canonifyurls = true
 publishdir = "public"
 disqusShortname = "Hobo"
