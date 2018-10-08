@@ -17,7 +17,9 @@
       <pubDate>Tue, 09 Oct 2018 04:51:26 +0900</pubDate>
       
       <guid>https://hobo0xcc.github.io/Blog/posts/2018-10-09-1/</guid>
-      <description>i&amp;rsquo;m hobo. nice to meet you!</description>
+      <description>i&amp;rsquo;m hobo. nice to meet you!
+{{}} #include 
+int main(int argc, char** argv) { printf(&amp;ldquo;Hello, world&amp;rdquo;); return 0; } {{}}</description>
     </item>
     
   </channel>
