@@ -9,4 +9,7 @@
   <section class="summary">
     {{ .Summary }} {{ if .Truncated }} <a href="{{ .RelPermalink }}">Read More...</a>{{ end }}
   </section>
+  <section class="posts">
+    {{ .posts }} {{ if .Truncated }} <a href="{{ .RelPermalink }}">Read More...</a>
+  </section>
 </article>
