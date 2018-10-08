@@ -18,7 +18,7 @@
       
       <guid>https://hobo0xcc.github.io/Blog/posts/2018-10-09-1/</guid>
       <description>i&amp;rsquo;m hobo. nice to meet you!
-#include &amp;lt;stdio.h&amp;gt;int main(int argc, char** argv) {printf(&amp;#34;Hello, world&amp;#34;);return 0;}  </description>
+#include &amp;lt;stdio.h&amp;gt;int main(void) {printf(&amp;#34;Hello, world&amp;#34;);return 0;}  </description>
     </item>
     
     <item>
