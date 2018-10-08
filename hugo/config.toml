@@ -5,6 +5,3 @@ title = "Hobo"
 canonifyurls = true
 publishdir = "public"
 disqusShortname = "Hobo"
-
-[params]
-    body_classes = "Noto Sans JP"
