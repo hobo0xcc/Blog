@@ -12,7 +12,7 @@
 {{ .Hugo.Generator }}
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="{{ "css/custom_style.css" | relURL }}" type="text/css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+JP&amp;subset=japanese" type="text/css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+JP|Source+Code+Pro&amp;subset=japanese,latin-ext" type="text/css">
 <link rel="alternate" href="{{ "index.xml" | relURL }}" type="application/rss+xml" title="{{ .Site.Title }}">
 <title>{{ $isHomePage := eq .Title .Site.Title }}{{ .Title }}{{ if eq $isHomePage false }} - {{ .Site.Title }}{{ end }}</title>
 </head>

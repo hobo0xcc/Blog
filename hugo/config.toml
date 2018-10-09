@@ -5,5 +5,4 @@ title = "Hobo"
 canonifyurls = true
 publishdir = "public"
 disqusShortname = "Hobo"
-pygmentsUseClassic = true
 pygmentsUseClasses = true
