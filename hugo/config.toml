@@ -7,3 +7,4 @@ publishdir = "public"
 disqusShortname = "Hobo"
 pygmentsUseClasses = true
 googleAnalytics = "UA-127173010-1"
+hasCJKLanguage = true
