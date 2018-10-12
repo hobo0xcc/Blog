@@ -6,10 +6,19 @@
     <description>Recent content on Hobo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 09 Oct 2018 04:51:26 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 09 Oct 2018 13:31:37 +0900</lastBuildDate>
     
 	<atom:link href="https://hobo0xcc.github.io/Blog/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>コンパイラやインタプリタを作るときに参考になりそうなリソース</title>
+      <link>https://hobo0xcc.github.io/Blog/posts/2018-10-12-1/</link>
+      <pubDate>Tue, 09 Oct 2018 13:31:37 +0900</pubDate>
+      
+      <guid>https://hobo0xcc.github.io/Blog/posts/2018-10-12-1/</guid>
+      <description>コンパイラを作るときに参考になりそうなサイトやプロジェクトが見つからず困っていたので、私がいままで見つけてきたものを書いていきます。 チュート</description>
+    </item>
     
     <item>
       <title>Hello, world!</title>

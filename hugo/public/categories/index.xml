@@ -10,5 +10,14 @@
 	<atom:link href="https://hobo0xcc.github.io/Blog/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
+    <item>
+      <title>Programming</title>
+      <link>https://hobo0xcc.github.io/Blog/categories/programming/</link>
+      <pubDate>Tue, 09 Oct 2018 13:31:37 +0900</pubDate>
+      
+      <guid>https://hobo0xcc.github.io/Blog/categories/programming/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>

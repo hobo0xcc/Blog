@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on Hobo</title>
-    <link>https://hobo0xcc.github.io/Blog/posts/</link>
-    <description>Recent content in Posts on Hobo</description>
+    <title>Interpreter on Hobo</title>
+    <link>https://hobo0xcc.github.io/Blog/tags/interpreter/</link>
+    <description>Recent content in Interpreter on Hobo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 09 Oct 2018 13:31:37 +0900</lastBuildDate>
     
-	<atom:link href="https://hobo0xcc.github.io/Blog/posts/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://hobo0xcc.github.io/Blog/tags/interpreter/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -18,16 +18,6 @@
       
       <guid>https://hobo0xcc.github.io/Blog/posts/2018-10-12-1/</guid>
       <description>コンパイラを作るときに参考になりそうなサイトやプロジェクトが見つからず困っていたので、私がいままで見つけてきたものを書いていきます。 チュート</description>
-    </item>
-    
-    <item>
-      <title>Hello, world!</title>
-      <link>https://hobo0xcc.github.io/Blog/posts/2018-10-09-1/</link>
-      <pubDate>Tue, 09 Oct 2018 04:51:26 +0900</pubDate>
-      
-      <guid>https://hobo0xcc.github.io/Blog/posts/2018-10-09-1/</guid>
-      <description>i&amp;rsquo;m hobo. nice to meet you!
-#include &amp;lt;stdio.h&amp;gt;int main(void) {printf(&amp;#34;Hello, world&amp;#34;);return 0;}  </description>
     </item>
     
   </channel>
