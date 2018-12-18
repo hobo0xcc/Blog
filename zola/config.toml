@@ -12,6 +12,7 @@ highlight_code = true
 build_search_index = true
 
 theme = "after-dark"
+title = "Hobo's computer blog"
 
 [extra]
 # Put all your custom variables here
