@@ -1,1 +1,3 @@
-# hello
++++
+title = "Hobo's computer blog"
++++
