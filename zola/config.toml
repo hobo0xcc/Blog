@@ -12,7 +12,7 @@ highlight_code = true
 build_search_index = true
 
 theme = "after-dark"
-title = "Hobo's computer blog"
+title = "Low-level blog"
 
 taxonomies = [
 	{ name = "categories", rss = true },
@@ -21,8 +21,12 @@ taxonomies = [
 
 [extra]
 # Put all your custom variables here
+
+author = "hobo"
 after_dark_menu = [
 	{ url = "$BASE_URL", name = "Home" },
 	{ url = "$BASE_URL/categories", name = "Categories" },
 	{ url = "$BASE_URL/tags", name = "Tags" },
 ]
+
+after_dark_title = "Low-level blog"
