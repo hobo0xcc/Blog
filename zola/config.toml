@@ -14,6 +14,7 @@ build_search_index = true
 theme = "after-dark"
 title = "Hobo's computer blog"
 
+[extra]
 taxonomies = [
 	{ name = "categories", rss = true },
 	{ name = "tags", rss = true },
