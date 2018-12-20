@@ -19,5 +19,11 @@ taxonomies = [
 	{ name = "tags", rss = true },
 ]
 
+after_dark_menu = [
+	{ url = "$BASE_URL", name = "Home" },
+	{ url = "$BASE_URL/categories", name = "Categories" },
+	{ url = "$BASE_URL/tags", name = "Tags" },
+]
+
 [extra]
 # Put all your custom variables here
