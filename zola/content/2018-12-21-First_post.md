@@ -6,6 +6,4 @@ draft = false
 	tags = [ "other" ]
 +++
 
-[Home](https://hobo0xcc.github.io/Blog/)
-
 Hello, world!
