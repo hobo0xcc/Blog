@@ -1,6 +1,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     
         <url>
+            <loc>https://hobo0xcc.github.io/Blog/curiosity/</loc>
+            
+                <lastmod>2019-01-02</lastmod>
+            
+        </url>
+    
+        <url>
             <loc>https://hobo0xcc.github.io/Blog/first-post/</loc>
             
                 <lastmod>2018-12-21</lastmod>
@@ -19,21 +26,29 @@
     
         
         <url>
-            <loc>https://hobo0xcc.github.io/Blog/tags/</loc>
+            <loc>https://hobo0xcc.github.io/Blog/categories/</loc>
         </url>
         
         <url>
-            <loc>https://hobo0xcc.github.io/Blog/tags/other/</loc>
+            <loc>https://hobo0xcc.github.io/Blog/categories/imagine/</loc>
+        </url>
+        
+        <url>
+            <loc>https://hobo0xcc.github.io/Blog/categories/other/</loc>
+        </url>
+        
+        <url>
+            <loc>https://hobo0xcc.github.io/Blog/categories/universe/</loc>
         </url>
         
     
         
         <url>
-            <loc>https://hobo0xcc.github.io/Blog/categories/</loc>
+            <loc>https://hobo0xcc.github.io/Blog/tags/</loc>
         </url>
         
         <url>
-            <loc>https://hobo0xcc.github.io/Blog/categories/other/</loc>
+            <loc>https://hobo0xcc.github.io/Blog/tags/other/</loc>
         </url>
         
     

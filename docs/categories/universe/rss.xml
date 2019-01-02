@@ -5,7 +5,7 @@
         <description></description>
         <generator>Zola</generator>
         <language>en</language>
-        <atom:link href="https://hobo0xcc.github.io/Blog/tags/other/rss.xml" rel="self" type="application/rss+xml"/>
+        <atom:link href="https://hobo0xcc.github.io/Blog/categories/universe/rss.xml" rel="self" type="application/rss+xml"/>
         <lastBuildDate>Wed, 02 Jan 2019 00:00:00 +0000</lastBuildDate>
         
             <item>
@@ -23,18 +23,6 @@
 &lt;p&gt;すべての物事が、完全に正しいことを証明することも、完全に否定することも少なくとも人間には不可能なのだと思う。&lt;&#x2F;p&gt;
 &lt;p&gt;自分自身の存在もわからない。&lt;&#x2F;p&gt;
 &lt;p&gt;結局、何もわからない。&lt;&#x2F;p&gt;
-</description>
-            </item>
-        
-            <item>
-                <title>hello, world</title>
-                <pubDate>Fri, 21 Dec 2018 00:00:00 +0000</pubDate>
-                <link>https://hobo0xcc.github.io/Blog/first-post/</link>
-                <guid>https://hobo0xcc.github.io/Blog/first-post/</guid>
-                <description>&lt;p&gt;Hello, world!&lt;&#x2F;p&gt;
-&lt;p&gt;I am a Japanese student, mainly interested in programming language and operating system.&lt;&#x2F;p&gt;
-&lt;p&gt;I am studying English because i do not have English as my mother tongue.&lt;&#x2F;p&gt;
-&lt;p&gt;If you find typos and mistakes and others, please let me known on &lt;a href=&quot;https:&#x2F;&#x2F;twitter.com&#x2F;hobo0xcc&quot;&gt;my twitter&lt;&#x2F;a&gt; or in &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;hobo0xcc&#x2F;Blog&quot;&gt;Github repository&lt;&#x2F;a&gt; of this blog.&lt;&#x2F;p&gt;
 </description>
             </item>
         
