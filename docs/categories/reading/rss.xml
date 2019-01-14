@@ -1,0 +1,29 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Low-level blog</title>
+        <link>https://hobo0xcc.github.io/Blog/</link>
+        <description></description>
+        <generator>Zola</generator>
+        <language>en</language>
+        <atom:link href="https://hobo0xcc.github.io/Blog/categories/reading/rss.xml" rel="self" type="application/rss+xml"/>
+        <lastBuildDate>Mon, 14 Jan 2019 00:00:00 +0000</lastBuildDate>
+        
+            <item>
+                <title>1月の読書予定</title>
+                <pubDate>Mon, 14 Jan 2019 00:00:00 +0000</pubDate>
+                <link>https://hobo0xcc.github.io/Blog/schedule-for-reading-in-jan/</link>
+                <guid>https://hobo0xcc.github.io/Blog/schedule-for-reading-in-jan/</guid>
+                <description>&lt;h1 id=&quot;1yue-nodu-shu-yu-ding&quot;&gt;1月の読書予定&lt;&#x2F;h1&gt;
+&lt;h3 id=&quot;du-miqie-ruben&quot;&gt;読み切る本&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;低レベルプログラミング&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;yi-ri-1-10pezidu-muben&quot;&gt;一日1 ~ 10ページ読む本&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;プログラマの数学&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</description>
+            </item>
+        
+    </channel>
+</rss>
