@@ -8,7 +8,7 @@
         </url>
     
         <url>
-            <loc>https://hobo0xcc.github.io/Blog/goal/</loc>
+            <loc>https://hobo0xcc.github.io/Blog/template/</loc>
             
                 <lastmod>2019-01-14</lastmod>
             
@@ -26,20 +26,6 @@
     
         
         <url>
-            <loc>https://hobo0xcc.github.io/Blog/tags/</loc>
-        </url>
-        
-        <url>
-            <loc>https://hobo0xcc.github.io/Blog/tags/goal/</loc>
-        </url>
-        
-        <url>
-            <loc>https://hobo0xcc.github.io/Blog/tags/other/</loc>
-        </url>
-        
-    
-        
-        <url>
             <loc>https://hobo0xcc.github.io/Blog/categories/</loc>
         </url>
         
@@ -49,6 +35,20 @@
         
         <url>
             <loc>https://hobo0xcc.github.io/Blog/categories/other/</loc>
+        </url>
+        
+    
+        
+        <url>
+            <loc>https://hobo0xcc.github.io/Blog/tags/</loc>
+        </url>
+        
+        <url>
+            <loc>https://hobo0xcc.github.io/Blog/tags/goal/</loc>
+        </url>
+        
+        <url>
+            <loc>https://hobo0xcc.github.io/Blog/tags/other/</loc>
         </url>
         
     
