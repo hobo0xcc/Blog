@@ -26,6 +26,20 @@
     
         
         <url>
+            <loc>https://hobo0xcc.github.io/Blog/tags/</loc>
+        </url>
+        
+        <url>
+            <loc>https://hobo0xcc.github.io/Blog/tags/other/</loc>
+        </url>
+        
+        <url>
+            <loc>https://hobo0xcc.github.io/Blog/tags/template/</loc>
+        </url>
+        
+    
+        
+        <url>
             <loc>https://hobo0xcc.github.io/Blog/categories/</loc>
         </url>
         
@@ -35,20 +49,6 @@
         
         <url>
             <loc>https://hobo0xcc.github.io/Blog/categories/other/</loc>
-        </url>
-        
-    
-        
-        <url>
-            <loc>https://hobo0xcc.github.io/Blog/tags/</loc>
-        </url>
-        
-        <url>
-            <loc>https://hobo0xcc.github.io/Blog/tags/goal/</loc>
-        </url>
-        
-        <url>
-            <loc>https://hobo0xcc.github.io/Blog/tags/other/</loc>
         </url>
         
     
