@@ -2,7 +2,7 @@
 title = "hello, world"
 draft = false
 [taxonomies]
-tags = "first"
+tags = [ "first" ]
 +++
 
 hello, world\n
