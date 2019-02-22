@@ -1,8 +1,6 @@
 +++
 title = "hello, world"
 draft = false
-[taxonomies]
-	tags = [ "other" ]
 +++
 
 ただのコンピュータブログ。
