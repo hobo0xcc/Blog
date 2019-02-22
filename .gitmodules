@@ -10,3 +10,6 @@
 [submodule "hugo/themes/hugo-base16-theme"]
 	path = hugo/themes/hugo-base16-theme
 	url = https://github.com/htdvisser/hugo-base16-theme.git
+[submodule "zola/themes/terminimal"]
+	path = zola/themes/terminimal
+	url = https://github.com/pawroman/zola-theme-terminimal.git

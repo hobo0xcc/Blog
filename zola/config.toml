@@ -1,6 +1,5 @@
 # The URL the site will be built for
 base_url = "https://hobo0xcc.github.io/Blog/"
-
 # Whether to automatically compile all Sass files in the sass directory
 compile_sass = true
 
@@ -11,22 +10,36 @@ highlight_code = true
 # Whether to build a search index to be used later on by a JavaScript library
 build_search_index = true
 
-theme = "after-dark"
-title = "Low-level blog"
-
-taxonomies = [
-	{ name = "categories", rss = true },
-	{ name = "tags", rss = true },
-]
+theme = "terminimal"
+title = "Computer Blog"
 
 [extra]
 # Put all your custom variables here
+accent_color = "green"
+background_color = "dark"
 
-author = "hobo"
-after_dark_menu = [
-	{ url = "$BASE_URL", name = "Home" },
-	{ url = "$BASE_URL/categories", name = "Categories" },
-	{ url = "$BASE_URL/tags", name = "Tags" },
+logo_text = "Computer Blog"
+logo_home_link = "https://hobo0xcc.github.io/Blog/"
+
+copyright_html = "(c) 2019 hobo0xcc"
+
+
+menu_items = [
+    {name = "blog", url = "$BASE_URL"},
+    
+    {name = "tags", url = "$BASE_URL/tags"},
+    {name = "archive", url = "$BASE_URL/archive"},
+    {name = "about me", url = "$BASE_URL/about"},
+    
+    {name = "github", url = "https://github.com/hobo0xcc", newtab = true},
 ]
 
-after_dark_title = "Low-level blog"
+taxonomies = [
+    {name = "tags"},
+]
+
+default_language = "ja"
+
+use_full_hack_font = true
+
+author = "hobo0xcc"
