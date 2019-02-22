@@ -13,6 +13,10 @@ build_search_index = true
 theme = "terminimal"
 title = "Computer Blog"
 
+taxonomies = [
+    {name = "tags"},
+]
+
 [extra]
 # Put all your custom variables here
 accent_color = "green"
@@ -32,10 +36,6 @@ menu_items = [
     {name = "about me", url = "$BASE_URL/about"},
     
     {name = "github", url = "https://github.com/hobo0xcc", newtab = true},
-]
-
-taxonomies = [
-    {name = "tags"},
 ]
 
 default_language = "ja"
