@@ -42,4 +42,6 @@ default_language = "ja"
 
 use_full_hack_font = true
 
+post_view_navigation_prompt = "Computer Blog"
+
 author = "hobo0xcc"
