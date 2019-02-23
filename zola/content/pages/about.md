@@ -5,4 +5,4 @@ path = "about"
 
 I am hobo0xcc.
 
-I love Computer.
+I love Computers.
