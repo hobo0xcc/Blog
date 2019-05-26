@@ -1,7 +1,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     
         <url>
+            <loc>https://hobo0xcc.github.io/Blog/tags/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://hobo0xcc.github.io/Blog/archive/</loc>
+            
+        </url>
+    
+        <url>
             <loc>https://hobo0xcc.github.io/Blog/about/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://hobo0xcc.github.io/Blog/my-opinion-about-adblock-19527/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://hobo0xcc.github.io/Blog/tags/first/</loc>
             
         </url>
     
@@ -13,22 +33,12 @@
         </url>
     
         <url>
-            <loc>https://hobo0xcc.github.io/Blog/archive/</loc>
-            
-        </url>
-    
-        <url>
-            <loc>https://hobo0xcc.github.io/Blog/tags/</loc>
-            
-        </url>
-    
-        <url>
-            <loc>https://hobo0xcc.github.io/Blog/tags/first/</loc>
-            
-        </url>
-    
-        <url>
             <loc>https://hobo0xcc.github.io/Blog/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https://hobo0xcc.github.io/Blog/tags/adblock/</loc>
             
         </url>
     

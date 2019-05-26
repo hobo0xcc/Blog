@@ -3,6 +3,4 @@ title = "about me"
 path = "about"
 +++
 
-I am hobo0xcc.
-
-I love Computers.
+低レイヤ関連を主に書きます。

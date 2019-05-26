@@ -36,7 +36,7 @@ menu_items = [
     {name = "archive", url = "$BASE_URL/archive"},
     {name = "about me", url = "$BASE_URL/about"},
     
-    {name = "github", url = "https://github.com/hobo0xcc", newtab = true},
+    {name = "github", url = "https://github.com/hobo0xcc/Blog", newtab = true},
 ]
 
 default_language = "ja"
