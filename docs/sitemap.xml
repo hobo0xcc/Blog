@@ -1,6 +1,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     
         <url>
+            <loc>https://hobo0xcc.github.io/Blog/about/</loc>
+            
+        </url>
+    
+        <url>
             <loc>https://hobo0xcc.github.io/Blog/tags/</loc>
             
         </url>
@@ -11,12 +16,9 @@
         </url>
     
         <url>
-            <loc>https://hobo0xcc.github.io/Blog/about/</loc>
+            <loc>https://hobo0xcc.github.io/Blog/my-opinion-about-adblock/</loc>
             
-        </url>
-    
-        <url>
-            <loc>https://hobo0xcc.github.io/Blog/my-opinion-about-adblock-19527/</loc>
+                <lastmod>2019-05-27</lastmod>
             
         </url>
     
