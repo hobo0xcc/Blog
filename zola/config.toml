@@ -12,7 +12,7 @@ highlight_theme = "boron"
 build_search_index = true
 
 theme = "terminimal"
-title = "Computer Blog"
+title = "Hobo0xcc's Blog"
 
 taxonomies = [
     {name = "tags"},
@@ -23,7 +23,7 @@ taxonomies = [
 accent_color = "green"
 background_color = "dark"
 
-logo_text = "Computer Blog"
+logo_text = "Hobo0xcc's Blog"
 logo_home_link = "https://hobo0xcc.github.io/Blog/"
 
 copyright_html = "(c) 2019 hobo0xcc"
@@ -43,6 +43,6 @@ default_language = "ja"
 
 use_full_hack_font = true
 
-post_view_navigation_prompt = "Computer Blog"
+post_view_navigation_prompt = "Hobo0xcc's Blog"
 
 author = "hobo0xcc"
