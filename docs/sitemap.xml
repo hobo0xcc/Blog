@@ -1,9 +1,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     
         <url>
-            <loc>https://hobo0xcc.github.io/Blog/diary190724/</loc>
-            
-                <lastmod>2019-07-24</lastmod>
+            <loc>https://hobo0xcc.github.io/Blog/tags/</loc>
             
         </url>
     
@@ -13,7 +11,14 @@
         </url>
     
         <url>
-            <loc>https://hobo0xcc.github.io/Blog/tags/</loc>
+            <loc>https://hobo0xcc.github.io/Blog/diary190725/</loc>
+            
+                <lastmod>2019-07-25</lastmod>
+            
+        </url>
+    
+        <url>
+            <loc>https://hobo0xcc.github.io/Blog/archive/</loc>
             
         </url>
     
@@ -28,7 +33,9 @@
         </url>
     
         <url>
-            <loc>https://hobo0xcc.github.io/Blog/archive/</loc>
+            <loc>https://hobo0xcc.github.io/Blog/diary190724/</loc>
+            
+                <lastmod>2019-07-24</lastmod>
             
         </url>
     
