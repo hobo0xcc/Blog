@@ -54,11 +54,11 @@
         
     <div class="post">
         
-    <h1 class="post-title"><a href="https://hobo0xcc.github.io/Blog/memo-190920/">雑多なメモ</a></h1>
+    <h1 class="post-title"><a href="https://hobo0xcc.github.io/Blog/emacs-normal-mode-191031/">evilでnormal-modeのキーバインドを変更</a></h1>
     <div class="post-meta-inline">
         
     <span class="post-date">
-            2019-09-20
+            2019-10-31
         </span>
 
     </div>
@@ -66,15 +66,17 @@
     
         <span class="post-tags-inline">
                 :: tags:&nbsp;
-                <a class="post-tag" href="https://hobo0xcc.github.io/Blog/tags/other/">#other</a></span>
+                <a class="post-tag" href="https://hobo0xcc.github.io/Blog/tags/spacemacs/">#spacemacs</a></span>
     
 
         
         <div class="post-content">
-            <h1 id="intel-sdmnomemo">Intel SDMのメモ</h1>
-<p>pp.79-82: Eflags register.</p>
-<h1 id="system-v-application-binary-interface">System V Application Binary Interface</h1>
-<p><a href="http://sco.com/developers/gabi/latest/contents.html">http://sco.com/developers/gabi/latest/contents.html</a></p>
+            <p>MacBook Proにspacemacsをいれてみたものの、EscがTouch barにあったためnormal-modeへのスイッチがしっくりこなかったので、vimと同じように <code>C-c</code> でできるように設定。</p>
+<pre style="background-color:#151515;">
+<span style="color:#e8e8d3;">  (define-key evil-insert-state-map (kbd </span><span style="color:#556633;">&quot;</span><span style="color:#99ad6a;">C-c</span><span style="color:#556633;">&quot;</span><span style="color:#e8e8d3;">) &#39;evil-normal-state)
+  (define-key evil-normal-state-map (kbd </span><span style="color:#556633;">&quot;</span><span style="color:#99ad6a;">C-c</span><span style="color:#556633;">&quot;</span><span style="color:#e8e8d3;">) &#39;evil-insert-state)
+</span></pre>
+<p><a href="https://github.com/noctuid/evil-guide/blob/master/README.org#use-some-emacs-keybindings">https://github.com/noctuid/evil-guide/blob/master/README.org#use-some-emacs-keybindings</a> を参考にした。</p>
 
         </div>
 
@@ -85,13 +87,13 @@
                 <hr />
             </div>
             <div class="pagination__buttons">
-                    <span class="button previous">
+                
+                    <span class="button next">
                         <a href="https://hobo0xcc.github.io/Blog/niki-191003/">
-                            <span class="button__icon">←</span>&nbsp;
-                            <span class="button__text">にっき</span>
+                            <span class="button__text">にっき</span>&nbsp;
+                            <span class="button__icon">→</span>
                         </a>
                     </span>
-                
                 </div>
         </div>
     
