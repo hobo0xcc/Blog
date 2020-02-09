@@ -6,7 +6,7 @@
     <description>Recent content on 0xcc</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Sat, 08 Feb 2020 18:59:14 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 09 Feb 2020 13:53:20 +0900</lastBuildDate>
     
 	<atom:link href="https://hobo0xcc.github.io/Blog/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,10 +14,11 @@
     <item>
       <title>First</title>
       <link>https://hobo0xcc.github.io/Blog/posts/first/</link>
-      <pubDate>Sat, 08 Feb 2020 18:59:14 +0900</pubDate>
+      <pubDate>Sun, 09 Feb 2020 13:53:20 +0900</pubDate>
       
       <guid>https://hobo0xcc.github.io/Blog/posts/first/</guid>
-      <description>Hello, world!</description>
+      <description>Hello, world!
+#include &amp;lt;iostream&amp;gt; using namespace std; int main() { cout &amp;lt;&amp;lt; &amp;#34;Hello, world!&amp;#34; &amp;lt;&amp;lt; endl; return 0; } </description>
     </item>
     
   </channel>
