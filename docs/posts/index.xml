@@ -17,8 +17,7 @@
       <pubDate>Sun, 09 Feb 2020 13:53:20 +0900</pubDate>
       
       <guid>https://hobo0xcc.github.io/Blog/posts/first/</guid>
-      <description>Hello, world!
-#include &amp;lt;iostream&amp;gt; using namespace std; int main() { cout &amp;lt;&amp;lt; &amp;#34;Hello, world!&amp;#34; &amp;lt;&amp;lt; endl; return 0; } </description>
+      <description>Hello, world! こんにちは世界! #include &amp;lt;iostream&amp;gt; using namespace std; int main() { cout &amp;lt;&amp;lt; &amp;#34;Hello, world!&amp;#34; &amp;lt;&amp;lt; endl; return 0; }</description>
     </item>
     
   </channel>

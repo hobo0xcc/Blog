@@ -8,6 +8,7 @@ keywords:
 ---
 
 Hello, world!
+こんにちは世界!
 
 ```c++
 #include <iostream>
