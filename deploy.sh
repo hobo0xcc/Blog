@@ -1,7 +1,7 @@
 #!/bin/bash
-cd zola
-zola build --output-dir ../docs
+cd blog
+hugo -D
 cd ..
-git add -A
-git commit -m "update"
+git add .
+git commit -m "Update"
 git push origin master

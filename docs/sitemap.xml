@@ -1,69 +1,28 @@
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-    
-        <url>
-            <loc>https://hobo0xcc.github.io/Blog/niki-191003/</loc>
-            
-                <lastmod>2019-10-03</lastmod>
-            
-        </url>
-    
-        <url>
-            <loc>https://hobo0xcc.github.io/Blog/tags/diary/</loc>
-            
-        </url>
-    
-        <url>
-            <loc>https://hobo0xcc.github.io/Blog/tags/other/</loc>
-            
-        </url>
-    
-        <url>
-            <loc>https://hobo0xcc.github.io/Blog/tags/</loc>
-            
-        </url>
-    
-        <url>
-            <loc>https://hobo0xcc.github.io/Blog/emacs-normal-mode-191031/</loc>
-            
-                <lastmod>2019-10-31</lastmod>
-            
-        </url>
-    
-        <url>
-            <loc>https://hobo0xcc.github.io/Blog/</loc>
-            
-        </url>
-    
-        <url>
-            <loc>https://hobo0xcc.github.io/Blog/tags/spacemacs/</loc>
-            
-        </url>
-    
-        <url>
-            <loc>https://hobo0xcc.github.io/Blog/page/1/</loc>
-            
-        </url>
-    
-        <url>
-            <loc>https://hobo0xcc.github.io/Blog/page/2/</loc>
-            
-        </url>
-    
-        <url>
-            <loc>https://hobo0xcc.github.io/Blog/memo-190920/</loc>
-            
-                <lastmod>2019-09-20</lastmod>
-            
-        </url>
-    
-        <url>
-            <loc>https://hobo0xcc.github.io/Blog/about/</loc>
-            
-        </url>
-    
-        <url>
-            <loc>https://hobo0xcc.github.io/Blog/archive/</loc>
-            
-        </url>
-    
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://hobo0xcc.github.io/Blog/</loc>
+    <lastmod>2020-02-08T18:59:39+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://hobo0xcc.github.io/Blog/posts/first/</loc>
+    <lastmod>2020-02-08T18:59:39+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://hobo0xcc.github.io/Blog/posts/</loc>
+    <lastmod>2020-02-08T18:59:39+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://hobo0xcc.github.io/Blog/categories/</loc>
+  </url>
+  
+  <url>
+    <loc>https://hobo0xcc.github.io/Blog/tags/</loc>
+  </url>
+  
 </urlset>

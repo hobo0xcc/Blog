@@ -1,0 +1,28 @@
+# config.toml
+
+publishdir = "../docs"
+
+theme = "hugo-primer"
+baseURL = "https://hobo0xcc.github.io/Blog"
+title = "0xcc"
+languageCode = "ja-jp"
+
+summaryLength = 70
+
+hasCJKLanguage = true
+# Code pen
+pygmentsCodeFences = true
+pygmentsUseClasses = true
+
+# Enter a copyright notice to display in the site footer.
+# To display a copyright symbol, type `&copy;`.
+copyright = ""
+
+[frontmatter]
+# update sitemap.xml's lastmod datetime by file change time, instead of git.
+lastmod = ["lastmod", ":fileModTime", ":default"]
+
+[params]
+math = true
+description = "Hack"
+showFooterCredits = false
