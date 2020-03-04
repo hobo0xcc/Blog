@@ -2,27 +2,63 @@
 
 publishdir = "../docs"
 
-theme = "hugo-primer"
 baseURL = "https://hobo0xcc.github.io/Blog"
-title = "0xcc"
 languageCode = "ja-jp"
+defaultContentLanguage = "ja"
 
-summaryLength = 70
+title = "0xcc"
+copyright = "Copyright (c) 2020, all rights reserved."
+canonifyurls = true
+paginate = 3
+theme = "hugo-dusk"
+math = true
 
-hasCJKLanguage = true
-# Code pen
-pygmentsCodeFences = true
-pygmentsUseClasses = true
+googleAnalytics = ""
+disqusShortname = ""
 
-# Enter a copyright notice to display in the site footer.
-# To display a copyright symbol, type `&copy;`.
-copyright = ""
+[author]
+  name = ""
 
-[frontmatter]
-# update sitemap.xml's lastmod datetime by file change time, instead of git.
-lastmod = ["lastmod", ":fileModTime", ":default"]
+SectionPagesMenu = "main"
+
+# Configure syntax highlight
+[markup]
+  [markup.highlight]
+    style = "monokai" # dark themes: monokai, api, fruity, native, rrt, swapoff
+
+[[menu.main]]
+  name = "Posts"
+  weight = -120
+  identifier = "post"
+  url = "/post/"
+
+[[menu.main]]
+  name = "Tags"
+  weight = -110
+  identifier = "tag"
+  url = "/tags/"
+[[menu.main]]
+  name = "About"
+  weight = -100
+  identifier = "about"
+  url = "/about"
+[[menu.main]]
+  name = "Memo"
+  weight = -90
+  identifier = "memo"
+  url = "/memo"
+
+[params.meta]
+  keywords = ""
+  description = ""
 
 [params]
-math = true
-description = "Hack"
-showFooterCredits = false
+  github = "hobo0xcc"
+  gitlab = ""
+  twitter = "hobo0xcc"
+  linkedin = ""
+  email = ""
+  theme_colors = "default-dark" # uses color css file under static/css/default-dark.css
+  utterancesRepo="" # Utterances is enabled when this param is set
+  utterancesTheme="github-dark" # Default: github-dark
+  utterancesIssueTerm="" # Default: pathname

@@ -1,10 +1,10 @@
 ---
-title: "First"
-date: 2020-02-09T13:53:20+09:00
-draft: true
-categories:
+title: "hello"
+date: 2020-03-04
 tags:
-keywords:
+categories:
+draft: true
+math: true
 ---
 
 Hello, world!
@@ -20,3 +20,5 @@ int main() {
   return 0;
 }
 ```
+
+$ e^{i\pi} = -1 $
