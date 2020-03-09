@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>0xcc</title>
-    <link>https://hobo0xcc.github.io/Blog/</link>
-    <description>Recent content on 0xcc</description>
+    <title>note on 0xcc</title>
+    <link>https://hobo0xcc.github.io/Blog/categories/note/</link>
+    <description>Recent content in note on 0xcc</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <copyright>Copyright (c) 2020, all rights reserved.</copyright>
-    <lastBuildDate>Wed, 04 Mar 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 09 Mar 2020 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://hobo0xcc.github.io/Blog/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://hobo0xcc.github.io/Blog/categories/note/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -43,37 +43,6 @@
       
       <guid>https://hobo0xcc.github.io/Blog/post/number-theory-2020-03-09/</guid>
       <description>第一章 </description>
-    </item>
-    
-    <item>
-      <title>About</title>
-      <link>https://hobo0xcc.github.io/Blog/about/</link>
-      <pubDate>Wed, 04 Mar 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://hobo0xcc.github.io/Blog/about/</guid>
-      <description>コンピュータが好き</description>
-    </item>
-    
-    <item>
-      <title>hello</title>
-      <link>https://hobo0xcc.github.io/Blog/post/hello/</link>
-      <pubDate>Wed, 04 Mar 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://hobo0xcc.github.io/Blog/post/hello/</guid>
-      <description>Hello, world! こんにちは世界!
-#include &amp;lt;iostream&amp;gt; using namespace std; int main() { cout &amp;lt;&amp;lt; &amp;#34;Hello, world!&amp;#34; &amp;lt;&amp;lt; endl; return 0; } $ e^{i\pi} = -1 $</description>
-    </item>
-    
-    <item>
-      <title>メモ</title>
-      <link>https://hobo0xcc.github.io/Blog/memo/</link>
-      <pubDate>Wed, 04 Mar 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://hobo0xcc.github.io/Blog/memo/</guid>
-      <description> リンク集 雑多なメモ 日々の進捗  リンク集  atcoder tags  雑多なメモ 競プロにおける今後の戦略
- ABC A, B問題を全埋め 出場できるあらゆるコンテストに出る  TODO
- コンピュータシステムの理論と実装  毎日読む macOSでの開発環境の用意   作って理解するOS  読む時間を作る   競プロ  次のコンテスト（03/08）までにABCのDをいくつか埋める 蟻本を一周して雰囲気を掴む（精読でなくてよい） 蟻本のDPの章を復習 EDPCを埋める 桁DPの練習 UnionFindの実装と練習   はじめての数論  読書メモをとりつつ進める    日々の進捗 20.03.04
- ブログを改造  </description>
     </item>
     
   </channel>
