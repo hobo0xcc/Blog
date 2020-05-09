@@ -1,49 +1,16 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on 0xcc</title>
+    <title>Posts on 0xb109</title>
     <link>https://hobo0xcc.github.io/Blog/post/</link>
-    <description>Recent content in Posts on 0xcc</description>
+    <description>Recent content in Posts on 0xb109</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <copyright>Copyright (c) 2020, all rights reserved.</copyright>
-    <lastBuildDate>Mon, 09 Mar 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 04 Mar 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://hobo0xcc.github.io/Blog/post/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>2020年の目標、あるいはそれに類する何か</title>
-      <link>https://hobo0xcc.github.io/Blog/post/memo-2020-03-09/</link>
-      <pubDate>Mon, 09 Mar 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://hobo0xcc.github.io/Blog/post/memo-2020-03-09/</guid>
-      <description>本来このようなものは年が明けて直ぐに書くものだと思われるが、ふと思い立ったので書いてみる。
-2020年は、個人的にいろいろなことが動く一年になると思う。人生の分かれ道と言っても過言ではないだろう。従って、この一年は自らの意思と目標を持って望みたいと思ったのがこの記事を書き始めた動機だ。
-端的に言って、この一年は勉強を頑張ろうと思う。この字面だけだと小学生にも書けるような目標のように思うが、ここで言う&amp;quot;勉強&amp;quot;は、あらゆる学問、分野について、興味の赴くままに見てまわり、時には深くまで入り込んで楽しむ、という意味合いだ。それらを何かに役立てようというのではなく、ただ単に私自身の願望で、人生においての夢などに向けたものではない。なぜこのような願望を持ったかはよくわからないが、「楽しそう」だとか「面白そう」といった類の感情なのだろうと思う。
-その中でも今年は特に数学をやっていきたいと思っている。
-数学 数学は、今最も興味を持っている学問だ。ただ、数学の本は、それを読むのに前提となる知識が膨大であることが多く、学校教育を少ししか受けていない人間にとってはついて行くことすらできない場合がある（筆者は現在中学三年生で、いわゆる不登校）。そのため、まずは中学、高校、大学において学ぶであろう数学の各分野について学ぶことが必要になるだろう。それらを突破できなければ学ぶことすら許されないように見受けられるので、頑張っていきたい。
-それらの必要条件を満たした暁には、学ぶことのできる分野がかなり増えるだろう。この一年は中学、高校、大学（学部レベル）での数学を中心に学んで行くこととなる。
-以下に学んでみたい分野を列挙する。
-  数論
-  解析学
-  抽象代数学
-  位相幾何学
-  圏論
-  参考にするサイト、本
-  サクセスロード
-  初めから始める数学1
-  </description>
-    </item>
-    
-    <item>
-      <title>はじめての数論 読書メモ</title>
-      <link>https://hobo0xcc.github.io/Blog/post/number-theory-2020-03-09/</link>
-      <pubDate>Mon, 09 Mar 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://hobo0xcc.github.io/Blog/post/number-theory-2020-03-09/</guid>
-      <description>第一章 </description>
-    </item>
     
     <item>
       <title>hello</title>

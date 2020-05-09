@@ -3,41 +3,6 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://hobo0xcc.github.io/Blog/post/memo-2020-03-09/</loc>
-    <lastmod>2020-03-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://hobo0xcc.github.io/Blog/categories/</loc>
-    <lastmod>2020-03-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://hobo0xcc.github.io/Blog/categories/note/</loc>
-    <lastmod>2020-03-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://hobo0xcc.github.io/Blog/tags/number-theory/</loc>
-    <lastmod>2020-03-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://hobo0xcc.github.io/Blog/post/</loc>
-    <lastmod>2020-03-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://hobo0xcc.github.io/Blog/tags/</loc>
-    <lastmod>2020-03-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://hobo0xcc.github.io/Blog/post/number-theory-2020-03-09/</loc>
-    <lastmod>2020-03-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://hobo0xcc.github.io/Blog/</loc>
     <lastmod>2020-03-04T00:00:00+00:00</lastmod>
   </url>
@@ -53,8 +18,21 @@
   </url>
   
   <url>
+    <loc>https://hobo0xcc.github.io/Blog/post/</loc>
+    <lastmod>2020-03-04T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://hobo0xcc.github.io/Blog/memo/</loc>
     <lastmod>2020-03-04T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://hobo0xcc.github.io/Blog/categories/</loc>
+  </url>
+  
+  <url>
+    <loc>https://hobo0xcc.github.io/Blog/tags/</loc>
   </url>
   
 </urlset>

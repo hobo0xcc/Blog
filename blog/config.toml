@@ -6,7 +6,7 @@ baseURL = "https://hobo0xcc.github.io/Blog"
 languageCode = "ja-jp"
 defaultContentLanguage = "ja"
 
-title = "0xcc"
+title = "0xb109"
 copyright = "Copyright (c) 2020, all rights reserved."
 canonifyurls = true
 paginate = 3
