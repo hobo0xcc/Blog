@@ -130,7 +130,7 @@ $$
 \frac{\Gamma \vdash e_0 : \mathtt{Bool} \quad \Gamma \vdash e_1 : \tau \quad \Gamma \vdash e_2 : \tau}{\Gamma \vdash \mathtt{if} e_0 \mathtt{then} e_1 \mathtt{else} e_2 : \tau}
 $$
 
-この時、$ e_0 = \mathtt{Bool} $ と $ e_1 = e_2 = \tau $ という3つの方程式が生成されます。
+この時、$ e_0 = \mathtt{Bool} $ と $ e_1 = e_2 = \tau $ という2つの方程式が生成されます。
 
 これがIf文から生成される方程式です。実装ではVectorやListに方程式を追加していきます。
 
