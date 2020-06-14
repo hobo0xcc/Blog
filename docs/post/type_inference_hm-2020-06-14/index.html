@@ -216,7 +216,7 @@ $$</p>
 <h2 id="型の連立方程式の生成">型の連立方程式の生成</h2>
 <p>If文は以下の型付け規則を持っているとします。</p>
 <p>$$
-\frac{\Gamma \vdash e_0 : \mathtt{Bool} \quad \Gamma \vdash e_1 : \tau \quad \Gamma \vdash e_2 : \tau}{\Gamma \vdash \mathtt{if} ; e_0 ; \mathtt{then} ; e_1 ; \mathtt{else} ; e_2 : \tau}
+\frac{\Gamma \vdash e_0 : \mathtt{Bool} \quad \Gamma \vdash e_1 : \tau \quad \Gamma \vdash e_2 : \tau}{\Gamma \vdash \mathtt{if} \quad e_0 \quad \mathtt{then} \quad e_1 \quad \mathtt{else} \quad e_2 : \tau}
 $$</p>
 <p>この時、$ e_0 = \mathtt{Bool} $ と $ e_1 = e_2 = \tau $ という2つの方程式が生成されます。</p>
 <p>これがIf文から生成される方程式です。実装ではVectorやListに方程式を追加していきます。</p>
