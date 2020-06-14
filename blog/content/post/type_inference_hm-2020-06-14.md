@@ -112,7 +112,7 @@ $$ \Gamma \vdash e : \tau $$
 
 さて、先ほどの例に戻ると、 $ \Gamma \vdash e_0 : \tau \rightarrow \tau ' $ は、型環境 $ \Gamma $ において、式 $ e_0 $ は $ \tau $ を引数に取り、 $ \tau ' $ を返す関数、となります。
 
-$ \Gamma e_1 : \tau $ も同様です。
+$ \Gamma \vdash e_1 : \tau $ も同様です。
 
 次に、先ほどの例の下の部分、 $ \Gamma \vdash e_0 e_1 : \tau ' $ を考えます。
 

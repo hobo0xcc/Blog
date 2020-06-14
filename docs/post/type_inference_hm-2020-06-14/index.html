@@ -65,7 +65,7 @@ zは引数として整数型を持ち、任意の型xを返します。引数に
 型推論を人力で行おうとすると、このような感じになります。">
 <meta itemprop="datePublished" content="2020-06-14T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2020-06-14T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="569">
+<meta itemprop="wordCount" content="570">
 
 
 
@@ -208,7 +208,7 @@ $$</p>
 <p>ここで、 $ \Gamma $ は型環境を表しています。型環境は、式とそれに対応する型の集合です。式 $ e $ が型環境 $ \Gamma $ において型 $ \tau $ を持つことを以下のように表します。</p>
 <p>$$ \Gamma \vdash e : \tau $$</p>
 <p>さて、先ほどの例に戻ると、 $ \Gamma \vdash e_0 : \tau \rightarrow \tau ' $ は、型環境 $ \Gamma $ において、式 $ e_0 $ は $ \tau $ を引数に取り、 $ \tau ' $ を返す関数、となります。</p>
-<p>$ \Gamma e_1 : \tau $ も同様です。</p>
+<p>$ \Gamma \vdash e_1 : \tau $ も同様です。</p>
 <p>次に、先ほどの例の下の部分、 $ \Gamma \vdash e_0 e_1 : \tau ' $ を考えます。</p>
 <p>ここで、型付け規則を $ \frac{g}{d} $ と表した時、その意味は、 $ g $ が与えられた時、 $ d $ が導かれる、となります。</p>
 <p>そのことを踏まえると、 $ \Gamma \vdash e_0 e_1 : \tau ' $ は、 $ \Gamma \vdash e_0 : \tau \rightarrow \tau ' \quad \Gamma \vdash e_1 : \tau $ が与えられた時に導かれる規則となります。</p>
