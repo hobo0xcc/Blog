@@ -120,7 +120,7 @@ $ \Gamma \vdash e_1 : \tau $ も同様です。
 
 そのことを踏まえると、 $ \Gamma \vdash e_0 e_1 : \tau ' $ は、 $ \Gamma \vdash e_0 : \tau \rightarrow \tau ' \quad \Gamma \vdash e_1 : \tau $ が与えられた時に導かれる規則となります。
 
-さて、 $ \Gamma \vdash e_0 e_1 : \tau ' $ は、関数 $ e_0 $ に引数 $ e_1 $ を適用した時、この式の型は $ \tau ' $ という意味になります。
+さて、 $ \Gamma \vdash e_0 e_1 : \tau ' $ は、関数 $ e_0 $ に引数 $ e_1 $ を適用した時、この式の型は $ \tau ' $ 、という意味になります。
 
 ## 型の連立方程式の生成
 
