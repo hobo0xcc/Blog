@@ -99,12 +99,12 @@ let a x y z = if x == 2 then y else z(x - 1)
 型付け規則は以下のような記法になっています。
 
 $$
-\frac{\Gamma \vdash e_0 : \tau \rightarrow \tau ' \quad \Gamma \vdash e_1 : \tau}{\Gamma \vdash e_0 e_1 : \tau '}
+\frac{\Gamma \vdash e_0 : \tau \rightarrow \tau ' \quad \Gamma \vdash e_1 : \tau}{\Gamma \vdash e_0 e_1 : \tau ' }
 $$
 
 一見すると複雑なように思えますが、一つづつ読み解いていきましょう。
 
-まず、 $ {\Gamma \vdash e_0 : \tau \rightarrow \tau '} $ を考えます。
+まず、 $ {\Gamma \vdash e_0 : \tau \rightarrow \tau ' } $ を考えます。
 
 ここで、 $ \Gamma $ は型環境を表しています。型環境は、式とそれに対応する型の集合です。式 $ e $ が型環境 $ \Gamma $ において型 $ \tau $ を持つことを以下のように表します。
 

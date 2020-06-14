@@ -65,7 +65,7 @@ zは引数として整数型を持ち、任意の型xを返します。引数に
 型推論を人力で行おうとすると、このような感じになります。">
 <meta itemprop="datePublished" content="2020-06-14T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2020-06-14T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="570">
+<meta itemprop="wordCount" content="572">
 
 
 
@@ -201,10 +201,10 @@ zは引数として整数型を持ち、任意の型xを返します。引数に
 <p>ここで、言語の制約を書くのに便利な記法として、型付け規則について解説します。</p>
 <p>型付け規則は以下のような記法になっています。</p>
 <p>$$
-\frac{\Gamma \vdash e_0 : \tau \rightarrow \tau ' \quad \Gamma \vdash e_1 : \tau}{\Gamma \vdash e_0 e_1 : \tau &lsquo;}
+\frac{\Gamma \vdash e_0 : \tau \rightarrow \tau ' \quad \Gamma \vdash e_1 : \tau}{\Gamma \vdash e_0 e_1 : \tau ' }
 $$</p>
 <p>一見すると複雑なように思えますが、一つづつ読み解いていきましょう。</p>
-<p>まず、 $ {\Gamma \vdash e_0 : \tau \rightarrow \tau &lsquo;} $ を考えます。</p>
+<p>まず、 $ {\Gamma \vdash e_0 : \tau \rightarrow \tau ' } $ を考えます。</p>
 <p>ここで、 $ \Gamma $ は型環境を表しています。型環境は、式とそれに対応する型の集合です。式 $ e $ が型環境 $ \Gamma $ において型 $ \tau $ を持つことを以下のように表します。</p>
 <p>$$ \Gamma \vdash e : \tau $$</p>
 <p>さて、先ほどの例に戻ると、 $ \Gamma \vdash e_0 : \tau \rightarrow \tau ' $ は、型環境 $ \Gamma $ において、式 $ e_0 $ は $ \tau $ を引数に取り、 $ \tau ' $ を返す関数、となります。</p>
