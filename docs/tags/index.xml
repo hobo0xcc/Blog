@@ -7,9 +7,37 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <copyright>Copyright (c) 2020, all rights reserved.</copyright>
+    <lastBuildDate>Sun, 14 Jun 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://hobo0xcc.github.io/Blog/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>C</title>
+      <link>https://hobo0xcc.github.io/Blog/tags/c/</link>
+      <pubDate>Sun, 14 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://hobo0xcc.github.io/Blog/tags/c/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Compiler Construction</title>
+      <link>https://hobo0xcc.github.io/Blog/tags/compiler-construction/</link>
+      <pubDate>Sun, 14 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://hobo0xcc.github.io/Blog/tags/compiler-construction/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Type Inference</title>
+      <link>https://hobo0xcc.github.io/Blog/tags/type-inference/</link>
+      <pubDate>Sun, 14 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://hobo0xcc.github.io/Blog/tags/type-inference/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>

@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="ja-jp">
+
+<head>
+<meta charset="utf-8" />
+<meta name="author" content="" />
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="generator" content="Hugo 0.66.0" />
+
+<link rel="canonical" href="https://hobo0xcc.github.io/Blog/post/type_inference_hm-2020-06-14/">
+<meta property="og:title" content="型推論の実装" />
+<meta property="og:description" content="この記事では、主に型推論の実装方法について書いていきます。 理論的な側面は必要最低限に留めますので、詳しく知りたい方は参考文献を参照してください。
+型推論とは何か 型推論とは何かについて軽く説明しておきましょう。
+型推論とは、プログラムの変数や引数などの型を、明示的な指定がなくても自動的に推論し、決定する機構のことです。 たとえば、以下のようなOCamlプログラムを考えてみましょう。
+let f x y = x &#43; y;; このプログラムはxとyを引数として、それらの和を返しています。OCamlのREPLで実行してみると、この関数は引数として整数を2つ持ち、整数を返す関数として定義されます。 xとyには何も型を指定していないのに、整数であると決定されるわけです。
+val f : int -&gt; int -&gt; int = &lt;fun&gt; このように、型推論は型を周辺状況や文脈などから決定してくれます。
+上記の例では、&#43;演算子が左辺と右辺に整数をとり、整数を返す、という情報から関数の型を推論しています。このような単純な型推論は比較的簡単に実装できるでしょう。
+今度は少し複雑な例を考えてみましょう。
+let a x y z = if x == 2 then y else z(x - 1) この関数は以下の型を持ちます。
+val a : int -&gt; &#39;a -&gt; (int -&gt; &#39;a) -&gt; &#39;a = &lt;fun&gt; 整数、任意の型x、引数として整数を持ち、任意の型xを返す関数、これらを引数として、任意の型xを返す関数、という型を持っています。
+それぞれの引数について、なぜその型を持つのかについて説明します。
+xは整数型を持っています。これは、x == 2の部分から推論されています。==演算子は左辺と右辺に同じ型をとるので、右辺の2と同じ型を持っていなくてはなりません。このことから、xは整数型を持つことがわかります。
+yは任意の型xを持っています。これは、型推論で型が特に決定されなかったことを意味しています。あとで説明しますが、これは、型変数が置き換わらなかった場合です。
+zは引数として整数型を持ち、任意の型xを返します。引数に整数型を持つのは、先ほどの例と同様に、x - 1が整数型を持つためです。では、任意の型を返すのは何故でしょうか。これは、If文の制約に関係しています。If文は条件式に真偽型を持ち、thenとelseの部分で同じ型を持つようになっています。そのため、zが返す型はyと同じ任意の型xになります。
+型推論を人力で行おうとすると、このような感じになります。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://hobo0xcc.github.io/Blog/post/type_inference_hm-2020-06-14/" />
+<meta property="article:published_time" content="2020-06-14T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-06-14T00:00:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="型推論の実装"/>
+<meta name="twitter:description" content="この記事では、主に型推論の実装方法について書いていきます。 理論的な側面は必要最低限に留めますので、詳しく知りたい方は参考文献を参照してください。
+型推論とは何か 型推論とは何かについて軽く説明しておきましょう。
+型推論とは、プログラムの変数や引数などの型を、明示的な指定がなくても自動的に推論し、決定する機構のことです。 たとえば、以下のようなOCamlプログラムを考えてみましょう。
+let f x y = x &#43; y;; このプログラムはxとyを引数として、それらの和を返しています。OCamlのREPLで実行してみると、この関数は引数として整数を2つ持ち、整数を返す関数として定義されます。 xとyには何も型を指定していないのに、整数であると決定されるわけです。
+val f : int -&gt; int -&gt; int = &lt;fun&gt; このように、型推論は型を周辺状況や文脈などから決定してくれます。
+上記の例では、&#43;演算子が左辺と右辺に整数をとり、整数を返す、という情報から関数の型を推論しています。このような単純な型推論は比較的簡単に実装できるでしょう。
+今度は少し複雑な例を考えてみましょう。
+let a x y z = if x == 2 then y else z(x - 1) この関数は以下の型を持ちます。
+val a : int -&gt; &#39;a -&gt; (int -&gt; &#39;a) -&gt; &#39;a = &lt;fun&gt; 整数、任意の型x、引数として整数を持ち、任意の型xを返す関数、これらを引数として、任意の型xを返す関数、という型を持っています。
+それぞれの引数について、なぜその型を持つのかについて説明します。
+xは整数型を持っています。これは、x == 2の部分から推論されています。==演算子は左辺と右辺に同じ型をとるので、右辺の2と同じ型を持っていなくてはなりません。このことから、xは整数型を持つことがわかります。
+yは任意の型xを持っています。これは、型推論で型が特に決定されなかったことを意味しています。あとで説明しますが、これは、型変数が置き換わらなかった場合です。
+zは引数として整数型を持ち、任意の型xを返します。引数に整数型を持つのは、先ほどの例と同様に、x - 1が整数型を持つためです。では、任意の型を返すのは何故でしょうか。これは、If文の制約に関係しています。If文は条件式に真偽型を持ち、thenとelseの部分で同じ型を持つようになっています。そのため、zが返す型はyと同じ任意の型xになります。
+型推論を人力で行おうとすると、このような感じになります。"/>
+
+
+<meta itemprop="name" content="型推論の実装">
+<meta itemprop="description" content="この記事では、主に型推論の実装方法について書いていきます。 理論的な側面は必要最低限に留めますので、詳しく知りたい方は参考文献を参照してください。
+型推論とは何か 型推論とは何かについて軽く説明しておきましょう。
+型推論とは、プログラムの変数や引数などの型を、明示的な指定がなくても自動的に推論し、決定する機構のことです。 たとえば、以下のようなOCamlプログラムを考えてみましょう。
+let f x y = x &#43; y;; このプログラムはxとyを引数として、それらの和を返しています。OCamlのREPLで実行してみると、この関数は引数として整数を2つ持ち、整数を返す関数として定義されます。 xとyには何も型を指定していないのに、整数であると決定されるわけです。
+val f : int -&gt; int -&gt; int = &lt;fun&gt; このように、型推論は型を周辺状況や文脈などから決定してくれます。
+上記の例では、&#43;演算子が左辺と右辺に整数をとり、整数を返す、という情報から関数の型を推論しています。このような単純な型推論は比較的簡単に実装できるでしょう。
+今度は少し複雑な例を考えてみましょう。
+let a x y z = if x == 2 then y else z(x - 1) この関数は以下の型を持ちます。
+val a : int -&gt; &#39;a -&gt; (int -&gt; &#39;a) -&gt; &#39;a = &lt;fun&gt; 整数、任意の型x、引数として整数を持ち、任意の型xを返す関数、これらを引数として、任意の型xを返す関数、という型を持っています。
+それぞれの引数について、なぜその型を持つのかについて説明します。
+xは整数型を持っています。これは、x == 2の部分から推論されています。==演算子は左辺と右辺に同じ型をとるので、右辺の2と同じ型を持っていなくてはなりません。このことから、xは整数型を持つことがわかります。
+yは任意の型xを持っています。これは、型推論で型が特に決定されなかったことを意味しています。あとで説明しますが、これは、型変数が置き換わらなかった場合です。
+zは引数として整数型を持ち、任意の型xを返します。引数に整数型を持つのは、先ほどの例と同様に、x - 1が整数型を持つためです。では、任意の型を返すのは何故でしょうか。これは、If文の制約に関係しています。If文は条件式に真偽型を持ち、thenとelseの部分で同じ型を持つようになっています。そのため、zが返す型はyと同じ任意の型xになります。
+型推論を人力で行おうとすると、このような感じになります。">
+<meta itemprop="datePublished" content="2020-06-14T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2020-06-14T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="569">
+
+
+
+<meta itemprop="keywords" content="Type Inference,Compiler Construction,C," />
+
+<link rel="stylesheet" href="https://hobo0xcc.github.io/Blog/css/layout.css" />
+
+
+<link rel="stylesheet" href="https://hobo0xcc.github.io/Blog/css/default-dark.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {delimiters: [
+      {left: "$$", right: "$$", display: true},
+      {left: "$", right: "$", display: false}]
+    });
+  });
+</script>
+
+
+<title>
+
+
+     型推論の実装 
+
+</title>
+
+</head>
+
+
+<body>
+<div class="main">
+<header>
+
+<div class="header-bar">
+
+  <nav>
+    <div class="siteTitle">
+      <a href="https://hobo0xcc.github.io/Blog">0xb109</a>
+    </div> 
+
+    
+    
+    <a class="nav-item" href="https://hobo0xcc.github.io/Blog/post/"><div class="nav-item-title">Posts</div></a>
+    
+    <a class="nav-item" href="https://hobo0xcc.github.io/Blog/tags/"><div class="nav-item-title">Tags</div></a>
+    
+    <a class="nav-item" href="https://hobo0xcc.github.io/Blog/about"><div class="nav-item-title">About</div></a>
+    
+    <a class="nav-item" href="https://hobo0xcc.github.io/Blog/memo"><div class="nav-item-title">Memo</div></a>
+    
+
+  </nav>
+
+  
+<div class="social-links-header">
+
+  
+
+  
+  <a href="https://github.com/hobo0xcc" target="_blank"><div class="social-link">gh</div></a>
+  
+
+  
+
+  
+  <a href="https://twitter.com/hobo0xcc" target="_blank"><div class="social-link">twtr</div></a>
+  
+
+  
+
+</div>
+
+
+</div>
+
+
+</header>
+
+
+<article class="post">
+    <h1 class="title"> 型推論の実装 </h1>
+    <div class="content"> <p>この記事では、主に型推論の実装方法について書いていきます。
+理論的な側面は必要最低限に留めますので、詳しく知りたい方は参考文献を参照してください。</p>
+<h1 id="型推論とは何か">型推論とは何か</h1>
+<p>型推論とは何かについて軽く説明しておきましょう。</p>
+<p>型推論とは、プログラムの変数や引数などの型を、明示的な指定がなくても自動的に推論し、決定する機構のことです。
+たとえば、以下のようなOCamlプログラムを考えてみましょう。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-OCaml" data-lang="OCaml"><span style="color:#66d9ef">let</span> f x y <span style="color:#f92672">=</span> x <span style="color:#f92672">+</span> y<span style="color:#f92672">;;</span>
+</code></pre></div><p>このプログラムは<code>x</code>と<code>y</code>を引数として、それらの和を返しています。OCamlのREPLで実行してみると、この関数は引数として整数を2つ持ち、整数を返す関数として定義されます。
+<code>x</code>と<code>y</code>には何も型を指定していないのに、整数であると決定されるわけです。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-OCaml" data-lang="OCaml"><span style="color:#66d9ef">val</span> f <span style="color:#f92672">:</span> <span style="color:#66d9ef">int</span> <span style="color:#f92672">-&gt;</span> <span style="color:#66d9ef">int</span> <span style="color:#f92672">-&gt;</span> <span style="color:#66d9ef">int</span> <span style="color:#f92672">=</span> <span style="color:#f92672">&lt;</span><span style="color:#66d9ef">fun</span><span style="color:#f92672">&gt;</span>
+</code></pre></div><p>このように、型推論は型を<strong>周辺状況</strong>や<strong>文脈</strong>などから決定してくれます。</p>
+<p>上記の例では、<code>+</code>演算子が左辺と右辺に整数をとり、整数を返す、という情報から関数の型を推論しています。このような単純な型推論は比較的簡単に実装できるでしょう。</p>
+<p>今度は少し複雑な例を考えてみましょう。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-OCaml" data-lang="OCaml"><span style="color:#66d9ef">let</span> a x y z <span style="color:#f92672">=</span> <span style="color:#66d9ef">if</span> x <span style="color:#f92672">==</span> 2 <span style="color:#66d9ef">then</span> y <span style="color:#66d9ef">else</span> z<span style="color:#f92672">(</span>x <span style="color:#f92672">-</span> 1<span style="color:#f92672">)</span>
+</code></pre></div><p>この関数は以下の型を持ちます。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-OCaml" data-lang="OCaml"><span style="color:#66d9ef">val</span> a <span style="color:#f92672">:</span> <span style="color:#66d9ef">int</span> <span style="color:#f92672">-&gt;</span> <span style="color:#66d9ef">&#39;</span>a <span style="color:#f92672">-&gt;</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> <span style="color:#f92672">-&gt;</span> <span style="color:#66d9ef">&#39;</span>a<span style="color:#f92672">)</span> <span style="color:#f92672">-&gt;</span> <span style="color:#66d9ef">&#39;</span>a <span style="color:#f92672">=</span> <span style="color:#f92672">&lt;</span><span style="color:#66d9ef">fun</span><span style="color:#f92672">&gt;</span>
+</code></pre></div><p>整数、任意の型<code>x</code>、引数として整数を持ち、任意の型<code>x</code>を返す関数、これらを引数として、任意の型<code>x</code>を返す関数、という型を持っています。</p>
+<p>それぞれの引数について、なぜその型を持つのかについて説明します。</p>
+<p><code>x</code>は整数型を持っています。これは、<code>x == 2</code>の部分から推論されています。<code>==</code>演算子は左辺と右辺に同じ型をとるので、右辺の<code>2</code>と同じ型を持っていなくてはなりません。このことから、<code>x</code>は整数型を持つことがわかります。</p>
+<p><code>y</code>は任意の型<code>x</code>を持っています。これは、型推論で型が特に決定されなかったことを意味しています。あとで説明しますが、これは、<strong>型変数</strong>が置き換わらなかった場合です。</p>
+<p><code>z</code>は引数として整数型を持ち、任意の型<code>x</code>を返します。引数に整数型を持つのは、先ほどの例と同様に、<code>x - 1</code>が整数型を持つためです。では、任意の型を返すのは何故でしょうか。これは、If文の制約に関係しています。If文は条件式に真偽型を持ち、thenとelseの部分で同じ型を持つようになっています。そのため、<code>z</code>が返す型は<code>y</code>と同じ任意の型<code>x</code>になります。</p>
+<p>型推論を人力で行おうとすると、このような感じになります。</p>
+<p>次の章では、型推論がどのようにして実行されるかについて解説します。</p>
+<h1 id="型推論の大まかな流れ">型推論の大まかな流れ</h1>
+<p>型推論は、以下のようなステップを踏みます。</p>
+<ol>
+<li>すでに明らかなものに型をつける。</li>
+<li>現時点で明らかでないものに型変数をつける。</li>
+<li>型の連立方程式を立てる</li>
+<li>単一化(Unification)して、型変数についての代入(Substitution)を生成する。</li>
+</ol>
+<p>1つめのステップでは、12や42のような整数値、trueやfalseのような真偽値などにそれぞれの型を付けます。これらはすでに明らかなので、そのまま代入します。</p>
+<p>2つめのステップでは、<strong>明らかでない</strong>ものに型変数を代入します。たとえば、関数の引数などは最初のステップでは明らかでないので、型変数が代入されます。</p>
+<p>3つめのステップでは、型についての連立方程式を立てます。これは数学の連立方程式と同じように、どの型とどの型が等しい(= 同じ型を持つ)かを方程式にします。たとえば、If文の条件式は真偽型と等しく、thenとelseの型は等しい、といった感じです。</p>
+<p>4つめのステップでは、単一化(Unification)という作業を行います。これは、2つの型が与えられた時、型変数を置き換えて(= 型変数を消して)、型を等しくします。</p>
+<p>次の章では、型の連立方程式と単一化について詳しく説明します。</p>
+<h1 id="型の連立方程式と単一化">型の連立方程式と単一化</h1>
+<p>型の連立方程式は、言語の制約から、どの型とどの型が等しいかを方程式にして並べたものと考えることができます。</p>
+<p>先ほどの例を型の連立方程式の観点からもう一度考えてみましょう。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-OCaml" data-lang="OCaml"><span style="color:#66d9ef">let</span> a x y z <span style="color:#f92672">=</span> <span style="color:#66d9ef">if</span> x <span style="color:#f92672">==</span> 2 <span style="color:#66d9ef">then</span> y <span style="color:#66d9ef">else</span> z<span style="color:#f92672">(</span>x <span style="color:#f92672">-</span> 1<span style="color:#f92672">)</span>
+</code></pre></div><p>例えば、<code>x == 2</code>の部分はIf文のルールから、真偽型と等しいことがわかります。さらに、<code>then y else z(x - 1)</code>の<code>y</code>と<code>z(x - 1)</code>も等しいことがわかります。</p>
+<p>このように、言語の制約(= ルール)から、型の連立方程式を立てていきます。</p>
+<h2 id="言語の型付け規則">言語の型付け規則</h2>
+<p>ここで、言語の制約を書くのに便利な記法として、型付け規則について解説します。</p>
+<p>型付け規則は以下のような記法になっています。</p>
+<p>$$
+\frac{\Gamma \vdash e_0 : \tau \rightarrow \tau ' \quad \Gamma \vdash e_1 : \tau}{\Gamma \vdash e_0 e_1 : \tau &lsquo;}
+$$</p>
+<p>一見すると複雑なように思えますが、一つづつ読み解いていきましょう。</p>
+<p>まず、 $ {\Gamma \vdash e_0 : \tau \rightarrow \tau &lsquo;} $ を考えます。</p>
+<p>ここで、 $ \Gamma $ は型環境を表しています。型環境は、式とそれに対応する型の集合です。式 $ e $ が型環境 $ \Gamma $ において型 $ \tau $ を持つことを以下のように表します。</p>
+<p>$$ \Gamma \vdash e : \tau $$</p>
+<p>さて、先ほどの例に戻ると、 $ \Gamma \vdash e_0 : \tau \rightarrow \tau ' $ は、型環境 $ \Gamma $ において、式 $ e_0 $ は $ \tau $ を引数に取り、 $ \tau ' $ を返す関数、となります。</p>
+<p>$ \Gamma e_1 : \tau $ も同様です。</p>
+<p>次に、先ほどの例の下の部分、 $ \Gamma \vdash e_0 e_1 : \tau ' $ を考えます。</p>
+<p>ここで、型付け規則を $ \frac{g}{d} $ と表した時、その意味は、 $ g $ が与えられた時、 $ d $ が導かれる、となります。</p>
+<p>そのことを踏まえると、 $ \Gamma \vdash e_0 e_1 : \tau ' $ は、 $ \Gamma \vdash e_0 : \tau \rightarrow \tau ' \quad \Gamma \vdash e_1 : \tau $ が与えられた時に導かれる規則となります。</p>
+<p>さて、 $ \Gamma \vdash e_0 e_1 : \tau ' $ は、関数 $ e_0 $ に引数 $ e_1 $ を適用した時、この式の型は $ \tau ' $ という意味になります。</p>
+<h2 id="型の連立方程式の生成">型の連立方程式の生成</h2>
+<p>If文は以下の型付け規則を持っているとします。</p>
+<p>$$
+\frac{\Gamma \vdash e_0 : \mathtt{Bool} \quad \Gamma \vdash e_1 : \tau \quad \Gamma \vdash e_2 : \tau}{\Gamma \vdash \mathtt{if} e_0 \mathtt{then} e_1 \mathtt{else} e_2 : \tau}
+$$</p>
+<p>この時、$ e_0 = \mathtt{Bool} $ と $ e_1 = e_2 = \tau $ という3つの方程式が生成されます。</p>
+<p>これがIf文から生成される方程式です。実装ではVectorやListに方程式を追加していきます。</p>
+<p>同様に、<code>+</code>演算子や<code>==</code>演算子の型付け規則も定義できます。</p>
+<p>$$
+\frac{\Gamma \vdash e_0 : \mathtt{Int} \quad \Gamma \vdash e_1 : \mathtt{Int}}{\Gamma \vdash e_0 + e_1 : \mathtt{Int}}
+$$</p>
+<p>$$
+\frac{\Gamma \vdash e_0 : \tau \quad \Gamma \vdash e_1 : \tau}{\Gamma \vdash e_0 \mathtt{==} e_1 : \mathtt{Bool}}
+$$</p>
+<p>このような型付け規則から型の連立方程式を生成していきます。</p>
+<h2 id="単一化">単一化</h2>
+<p>2つの型が与えられた時、それらを等しくする型変数への代入(Substitution)を決定するのが単一化です。</p>
+<p>例えば、以下のような2つの関数型を単一化することを考えましょう。
+ここで、大文字は型変数、小文字は定数、g(&hellip;)のようなものは関数の適用とします。</p>
+<p><code>f(V, a, K)</code></p>
+<p><code>f(v, U, bar(U))</code></p>
+<p>これらを等しくするような型変数への代入を考えます。</p>
+<p>まず、一番左をみると、{V=v}と代入すれば良いことがわかります。</p>
+<p>次に、左から2番目をみると、{V=v, U=a}となります。</p>
+<p>一番右をみると、これは{V=v, U=a, K=bar(U)}となります。</p>
+<p>関数型についてはこのように単一化できます。</p>
+<h2 id="単一化のアルゴリズム">単一化のアルゴリズム</h2>
+<p>単一化のアルゴリズムをPythonに似た疑似コードで示します。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">unify</span>(x, y, subst): <span style="color:#75715e"># xとyは方程式の左辺と右辺。substは代入。</span>
+    <span style="color:#66d9ef">if</span> x <span style="color:#f92672">==</span> y:
+        <span style="color:#66d9ef">return</span> Success <span style="color:#75715e"># xとyが等しい時は何もしない。</span>
+    <span style="color:#66d9ef">elif</span> x <span style="color:#f92672">is</span> Type Variable:
+        <span style="color:#66d9ef">return</span> unify_variable(x, y, subst)
+    <span style="color:#66d9ef">elif</span> y <span style="color:#f92672">is</span> Type Variable:
+        <span style="color:#66d9ef">return</span> unify_variable(y, x, subst)
+    <span style="color:#66d9ef">elif</span> x <span style="color:#f92672">is</span> Function <span style="color:#f92672">and</span> y <span style="color:#f92672">is</span> Function: <span style="color:#75715e"># xとyが関数型だった場合</span>
+        <span style="color:#66d9ef">if</span> x<span style="color:#f92672">.</span>arg_length() <span style="color:#f92672">!=</span> y<span style="color:#f92672">.</span>arg_length: <span style="color:#75715e"># xとyの引数の数が違う</span>
+            <span style="color:#66d9ef">return</span> Failed
+        <span style="color:#66d9ef">try</span> unify(x<span style="color:#f92672">.</span>return_type, y<span style="color:#f92672">.</span>return_type, subst) <span style="color:#75715e"># 関数の戻り値の型を単一化</span>
+        <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(len(x<span style="color:#f92672">.</span>args)):
+            <span style="color:#66d9ef">try</span> unify(x<span style="color:#f92672">.</span>args[i], y<span style="color:#f92672">.</span>args[i], subst) <span style="color:#75715e"># 引数の単一化</span>
+    <span style="color:#66d9ef">else</span>:
+        <span style="color:#66d9ef">return</span> Failed
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">unify_variable</span>(v, x, subst):
+    <span style="color:#66d9ef">if</span> v <span style="color:#f92672">in</span> subst: <span style="color:#75715e"># vの代入がすでに存在した時</span>
+        <span style="color:#66d9ef">return</span> unify(subst[v], x, subst) <span style="color:#75715e"># vの代入の型とxを単一化</span>
+    <span style="color:#66d9ef">elif</span> x <span style="color:#f92672">is</span> Type Variable <span style="color:#f92672">and</span> x <span style="color:#f92672">in</span> subst: <span style="color:#75715e"># xが型変数で、代入がすでに存在していた時</span>
+        <span style="color:#66d9ef">return</span> unify(v, subst[x], subst)
+    <span style="color:#66d9ef">elif</span> occurs_check(v, x, subst): <span style="color:#75715e"># vがxに登場した場合、無限ループに陥る可能性がある</span>
+        <span style="color:#66d9ef">return</span> Failed
+    <span style="color:#66d9ef">else</span>:
+        subst[v] <span style="color:#f92672">=</span> x
+        <span style="color:#66d9ef">return</span> Success
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">occurs_check</span>(v, t, subst): <span style="color:#75715e"># 型変数vが型tに現れるか</span>
+    <span style="color:#66d9ef">if</span> v <span style="color:#f92672">==</span> t:
+        <span style="color:#66d9ef">return</span> True
+    <span style="color:#66d9ef">elif</span> t <span style="color:#f92672">is</span> Type Variable <span style="color:#f92672">and</span> t <span style="color:#f92672">in</span> subst:
+        <span style="color:#66d9ef">return</span> occurs_check(v, subst[t], subst)
+    <span style="color:#66d9ef">elif</span> t <span style="color:#f92672">is</span> Function:
+        <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(len(t<span style="color:#f92672">.</span>args)): <span style="color:#75715e"># 引数にvが現れるか</span>
+            <span style="color:#66d9ef">if</span> occurs_check(v, t<span style="color:#f92672">.</span>args[i], subst):
+                <span style="color:#66d9ef">return</span> True
+    
+    <span style="color:#66d9ef">return</span> False
+</code></pre></div><h1 id="参考文献">参考文献</h1>
+<ul>
+<li><a href="https://eli.thegreenplace.net/2018/unification/">https://eli.thegreenplace.net/2018/unification/</a></li>
+<li><a href="https://eli.thegreenplace.net/2018/type-inference/">https://eli.thegreenplace.net/2018/type-inference/</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Hindley%E2%80%93Milner_type_system">https://en.wikipedia.org/wiki/Hindley%E2%80%93Milner_type_system</a></li>
+<li><a href="http://lucacardelli.name/Papers/BasicTypechecking.pdf">Basic Type checking</a></li>
+<li><a href="http://www.nsl.com/misc/papers/martelli-montanari.pdf">An Efficient Unification Algorithm</a></li>
+<li><a href="https://norvig.com/unify-bug.pdf">Correcting A Widespread Error in Unification Algorithms</a></li>
+</ul>
+ </div>
+    <footer class="post-footer">
+
+  <div class="post-footer-data">
+            
+<div class="tags">
+  
+    
+      <div class="tag">
+        <a href="https://hobo0xcc.github.io/Blog/tags/type-inference">#Type Inference</a>
+      </div>
+    
+      <div class="tag">
+        <a href="https://hobo0xcc.github.io/Blog/tags/compiler-construction">#Compiler Construction</a>
+      </div>
+    
+      <div class="tag">
+        <a href="https://hobo0xcc.github.io/Blog/tags/c">#C</a>
+      </div>
+    
+  
+</div>
+
+    <div class="date"> 2020-06-14 </div>
+    
+    <hr>
+            
+<div class="categories">
+  
+  Published in:
+    
+      <div class="category">
+        <a href="https://hobo0xcc.github.io/Blog/categories/compiler">Compiler</a>
+      </div>
+    
+  
+</div>
+
+            
+<div class="series">
+  
+</div>
+
+    
+  </div>
+</footer>
+
+
+  
+  
+
+
+
+</article>
+
+  <footer>
+
+  <div class="social-links-footer">
+
+  
+
+  
+  <a href="https://github.com/hobo0xcc" target="_blank"><div class="social-link">GitHub</div></a>
+  
+
+  
+
+  
+  <a href="https://twitter.com/hobo0xcc" target="_blank"><div class="social-link">Twitter</div></a>
+  
+
+  
+
+  <div class="social-link">
+  <a href="https://hobo0xcc.github.io/Blog/index.xml" target="_blank">RSS</a>
+  </div>
+
+</div>
+
+
+  <div class="copyright"> Copyright (c) 2020, all rights reserved. </div>
+
+  <div class="poweredby">
+    Powered by <a href="https://gohugo.io/">Hugo</a>.
+  </div>
+
+  </footer>
+
+</div> 
+
+</body>
+</html>
+

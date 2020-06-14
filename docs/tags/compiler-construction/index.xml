@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>0xb109</title>
-    <link>https://hobo0xcc.github.io/Blog/</link>
-    <description>Recent content on 0xb109</description>
+    <title>Compiler Construction on 0xb109</title>
+    <link>https://hobo0xcc.github.io/Blog/tags/compiler-construction/</link>
+    <description>Recent content in Compiler Construction on 0xb109</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <copyright>Copyright (c) 2020, all rights reserved.</copyright>
-    <lastBuildDate>Wed, 04 Mar 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 14 Jun 2020 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://hobo0xcc.github.io/Blog/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://hobo0xcc.github.io/Blog/tags/compiler-construction/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -32,37 +32,6 @@ xは整数型を持っています。これは、x == 2の部分から推論さ�
 yは任意の型xを持っています。これは、型推論で型が特に決定されなかったことを意味しています。あとで説明しますが、これは、型変数が置き換わらなかった場合です。
 zは引数として整数型を持ち、任意の型xを返します。引数に整数型を持つのは、先ほどの例と同様に、x - 1が整数型を持つためです。では、任意の型を返すのは何故でしょうか。これは、If文の制約に関係しています。If文は条件式に真偽型を持ち、thenとelseの部分で同じ型を持つようになっています。そのため、zが返す型はyと同じ任意の型xになります。
 型推論を人力で行おうとすると、このような感じになります。</description>
-    </item>
-    
-    <item>
-      <title>About</title>
-      <link>https://hobo0xcc.github.io/Blog/about/</link>
-      <pubDate>Wed, 04 Mar 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://hobo0xcc.github.io/Blog/about/</guid>
-      <description>コンピュータが好き</description>
-    </item>
-    
-    <item>
-      <title>hello</title>
-      <link>https://hobo0xcc.github.io/Blog/post/hello/</link>
-      <pubDate>Wed, 04 Mar 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://hobo0xcc.github.io/Blog/post/hello/</guid>
-      <description>Hello, world! こんにちは世界!
-#include &amp;lt;iostream&amp;gt; using namespace std; int main() { cout &amp;lt;&amp;lt; &amp;#34;Hello, world!&amp;#34; &amp;lt;&amp;lt; endl; return 0; } $ e^{i\pi} = -1 $</description>
-    </item>
-    
-    <item>
-      <title>メモ</title>
-      <link>https://hobo0xcc.github.io/Blog/memo/</link>
-      <pubDate>Wed, 04 Mar 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://hobo0xcc.github.io/Blog/memo/</guid>
-      <description> リンク集 雑多なメモ 日々の進捗  リンク集  atcoder tags  雑多なメモ 競プロにおける今後の戦略
- ABC A, B問題を全埋め 出場できるあらゆるコンテストに出る  TODO
- コンピュータシステムの理論と実装  毎日読む macOSでの開発環境の用意   作って理解するOS  読む時間を作る   競プロ  次のコンテスト（03/08）までにABCのDをいくつか埋める 蟻本を一周して雰囲気を掴む（精読でなくてよい） 蟻本のDPの章を復習 EDPCを埋める 桁DPの練習 UnionFindの実装と練習   はじめての数論  読書メモをとりつつ進める    日々の進捗 20.03.04
- ブログを改造  </description>
     </item>
     
   </channel>
