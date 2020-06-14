@@ -127,7 +127,7 @@ $ \Gamma \vdash e_1 : \tau $ も同様です。
 If文は以下の型付け規則を持っているとします。
 
 $$
-\frac{\Gamma \vdash e_0 : \mathtt{Bool} \quad \Gamma \vdash e_1 : \tau \quad \Gamma \vdash e_2 : \tau}{\Gamma \vdash \mathtt{if} e_0 \mathtt{then} e_1 \mathtt{else} e_2 : \tau}
+\frac{\Gamma \vdash e_0 : \mathtt{Bool} \quad \Gamma \vdash e_1 : \tau \quad \Gamma \vdash e_2 : \tau}{\Gamma \vdash \mathtt{if} \; e_0 \; \mathtt{then} \; e_1 \; \mathtt{else} \; e_2 : \tau}
 $$
 
 この時、$ e_0 = \mathtt{Bool} $ と $ e_1 = e_2 = \tau $ という2つの方程式が生成されます。
