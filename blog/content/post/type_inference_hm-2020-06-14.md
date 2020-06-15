@@ -106,21 +106,21 @@ $$
 
 まず、 $ {\Gamma \vdash e_0 : \tau \rightarrow \tau ' } $ を考えます。
 
-ここで、 $ \Gamma $ は型環境を表しています。型環境は、式とそれに対応する型の集合です。式 $ e $ が型環境 $ \Gamma $ において型 $ \tau $ を持つことを以下のように表します。
+ここで、 $\Gamma$ は型環境を表しています。型環境は、式とそれに対応する型の集合です。式 $e$ が型環境 $\Gamma$ において型 $\tau$ を持つことを以下のように表します。
 
 $$ \Gamma \vdash e : \tau $$
 
-さて、先ほどの例に戻ると、 $ \Gamma \vdash e_0 : \tau \rightarrow \tau ' $ は、型環境 $ \Gamma $ において、式 $ e_0 $ は $ \tau $ を引数に取り、 $ \tau ' $ を返す関数、となります。
+さて、先ほどの例に戻ると、 $\Gamma \vdash e_0 : \tau \rightarrow \tau'$ は、型環境 $\Gamma$ において、式 $e_0$ は $\tau$ を引数に取り、 $\tau'$ を返す関数、となります。
 
-$ \Gamma \vdash e_1 : \tau $ も同様です。
+$\Gamma \vdash e_1 : \tau$ も同様です。
 
-次に、先ほどの例の下の部分、 $ \Gamma \vdash e_0 e_1 : \tau ' $ を考えます。
+次に、先ほどの例の下の部分、 $\Gamma \vdash e_0 e_1 : \tau'$ を考えます。
 
-ここで、型付け規則を $ \frac{g}{d} $ と表した時、その意味は、 $ g $ が与えられた時、 $ d $ が導かれる、となります。
+ここで、型付け規則を $\LARGE \frac{g}{d}$ と表した時、その意味は、 $g$ が与えられた時、 $d$ が導かれる、となります。
 
-そのことを踏まえると、 $ \Gamma \vdash e_0 e_1 : \tau ' $ は、 $ \Gamma \vdash e_0 : \tau \rightarrow \tau ' \quad \Gamma \vdash e_1 : \tau $ が与えられた時に導かれる規則となります。
+そのことを踏まえると、 $\Gamma \vdash e_0 e_1 : \tau'$ は、 $\Gamma \vdash e_0 : \tau \rightarrow \tau ' \quad \Gamma \vdash e_1 : \tau$ が与えられた時に導かれる規則となります。
 
-さて、 $ \Gamma \vdash e_0 e_1 : \tau ' $ は、関数 $ e_0 $ に引数 $ e_1 $ を適用した時、この式の型は $ \tau ' $ 、という意味になります。
+さて、 $\Gamma \vdash e_0 e_1 : \tau'$ は、関数 $e_0$ に引数 $e_1$ を適用した時、この式の型は $\tau'$ 、という意味になります。
 
 ## 型の連立方程式の生成
 
@@ -130,7 +130,7 @@ $$
 \frac{\Gamma \vdash e_0 : \mathtt{Bool} \quad \Gamma \vdash e_1 : \tau \quad \Gamma \vdash e_2 : \tau}{\Gamma \vdash \mathtt{if} \quad e_0 \quad \mathtt{then} \quad e_1 \quad \mathtt{else} \quad e_2 : \tau}
 $$
 
-この時、$ e_0 = \mathtt{Bool} $ と $ e_1 = e_2 = \tau $ という2つの方程式が生成されます。
+この時、$e_0 = \mathtt{Bool}$ と $e_1 = e_2 = \tau$ という2つの方程式が生成されます。
 
 これがIf文から生成される方程式です。実装ではVectorやListに方程式を追加していきます。
 
