@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://hobo0xcc.github.io/Blog/</loc>
+    <lastmod>2020-06-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://hobo0xcc.github.io/Blog/tags/c/</loc>
     <lastmod>2020-06-14T00:00:00+00:00</lastmod>
   </url>
@@ -40,11 +45,6 @@
   <url>
     <loc>https://hobo0xcc.github.io/Blog/post/type_inference_hm-2020-06-14/</loc>
     <lastmod>2020-06-14T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://hobo0xcc.github.io/Blog/</loc>
-    <lastmod>2020-03-04T00:00:00+00:00</lastmod>
   </url>
   
   <url>

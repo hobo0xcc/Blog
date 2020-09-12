@@ -3,7 +3,7 @@
 publishdir = "../docs"
 
 baseURL = "https://hobo0xcc.github.io/Blog"
-languageCode = "ja-jp"
+languageCode = "ja-JP"
 defaultContentLanguage = "ja"
 
 title = "0xb109"
