@@ -1,5 +1,8 @@
-.xToc {
+#TableOfContents {
     text-align: center;
+}
+
+.xToc {
     font-size: smaller;
     border-radius: 0.5em;
     border: solid 1px lightgray;
