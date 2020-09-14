@@ -22,7 +22,6 @@
     width: 100%;
 }
 .xToc a {
-    font-family: monospace;
     font-weight: normal;
     display: block;
     border-bottom: dashed 1px lightgray;
