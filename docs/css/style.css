@@ -1,21 +1,21 @@
-#TableOfContents {
-    text-align: center;
-}
-
 .xToc {
     font-size: smaller;
     border-radius: 0.5em;
     border: solid 1px lightgray;
     padding: 0.5em 1em;
-    line-height: 2;
+    line-height: 1.2;
+    width: 30%;
+    position: relative;
+    left: 33%;
 }
 .xToc_title {
     font-weight: bolder;
     list-style-type: lower-roman;
 }
 .xToc ul {
-    list-style-type: decimal;
-    padding-left: 0;
+    list-style-type: lower-roman;
+    padding-left: 15%;
+    box-sizing: border-box;
 }
 .xToc li {
     padding-top: 0 !important;
@@ -25,7 +25,10 @@
     width: 100%;
 }
 .xToc a {
+    text-align: left;
+    font-size: inherit;
     font-weight: normal;
     display: block;
     border-bottom: dashed 1px lightgray;
+    text-decoration: none;
 }
