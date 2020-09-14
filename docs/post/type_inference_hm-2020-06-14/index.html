@@ -107,6 +107,10 @@ zは引数として整数型を持ち、任意の型xを返します。引数に
 <div class="main">
 <header>
 
+
+<link rel="stylesheet" href="https://hobo0xcc.github.io/Blog/css/style.css">
+
+
 <div class="header-bar">
 
   <nav>
@@ -155,9 +159,23 @@ zは引数として整数型を持ち、任意の型xを返します。引数に
 
 <article class="post">
     <h1 class="title"> 型推論の実装 </h1>
+      <aside class="xToc">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#型推論とは何か">型推論とは何か</a></li>
+    <li><a href="#型推論の大まかな流れ">型推論の大まかな流れ</a></li>
+    <li><a href="#型の連立方程式と単一化">型の連立方程式と単一化</a></li>
+    <li><a href="#言語の型付け規則">言語の型付け規則</a></li>
+    <li><a href="#型の連立方程式の生成">型の連立方程式の生成</a></li>
+    <li><a href="#単一化">単一化</a></li>
+    <li><a href="#単一化のアルゴリズム">単一化のアルゴリズム</a></li>
+    <li><a href="#参考文献">参考文献</a></li>
+  </ul>
+</nav>
+      </aside>
     <div class="content"> <p>この記事では、主に型推論の実装方法について書いていきます。
 理論的な側面は必要最低限に留めますので、詳しく知りたい方は参考文献を参照してください。</p>
-<h1 id="型推論とは何か">型推論とは何か</h1>
+<h2 id="型推論とは何か">型推論とは何か</h2>
 <p>型推論とは何かについて軽く説明しておきましょう。</p>
 <p>型推論とは、プログラムの変数や引数などの型を、明示的な指定がなくても自動的に推論し、決定する機構のことです。
 たとえば、以下のようなOCamlプログラムを考えてみましょう。</p>
@@ -178,7 +196,7 @@ zは引数として整数型を持ち、任意の型xを返します。引数に
 <p><code>z</code>は引数として整数型を持ち、任意の型<code>x</code>を返します。引数に整数型を持つのは、先ほどの例と同様に、<code>x - 1</code>が整数型を持つためです。では、任意の型を返すのは何故でしょうか。これは、If文の制約に関係しています。If文は条件式に真偽型を持ち、thenとelseの部分で同じ型を持つようになっています。そのため、<code>z</code>が返す型は<code>y</code>と同じ任意の型<code>x</code>になります。</p>
 <p>型推論を人力で行おうとすると、このような感じになります。</p>
 <p>次の章では、型推論がどのようにして実行されるかについて解説します。</p>
-<h1 id="型推論の大まかな流れ">型推論の大まかな流れ</h1>
+<h2 id="型推論の大まかな流れ">型推論の大まかな流れ</h2>
 <p>型推論は、以下のようなステップを踏みます。</p>
 <ol>
 <li>すでに明らかなものに型をつける。</li>
@@ -191,7 +209,7 @@ zは引数として整数型を持ち、任意の型xを返します。引数に
 <p>3つめのステップでは、型についての連立方程式を立てます。これは数学の連立方程式と同じように、どの型とどの型が等しい(= 同じ型を持つ)かを方程式にします。たとえば、If文の条件式は真偽型と等しく、thenとelseの型は等しい、といった感じです。</p>
 <p>4つめのステップでは、単一化(Unification)という作業を行います。これは、2つの型が与えられた時、型変数を置き換えて(= 型変数を消して)、型を等しくします。</p>
 <p>次の章では、型の連立方程式と単一化について詳しく説明します。</p>
-<h1 id="型の連立方程式と単一化">型の連立方程式と単一化</h1>
+<h2 id="型の連立方程式と単一化">型の連立方程式と単一化</h2>
 <p>型の連立方程式は、言語の制約から、どの型とどの型が等しいかを方程式にして並べたものと考えることができます。</p>
 <p>先ほどの例を型の連立方程式の観点からもう一度考えてみましょう。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-OCaml" data-lang="OCaml"><span style="color:#66d9ef">let</span> a x y z <span style="color:#f92672">=</span> <span style="color:#66d9ef">if</span> x <span style="color:#f92672">==</span> 2 <span style="color:#66d9ef">then</span> y <span style="color:#66d9ef">else</span> z<span style="color:#f92672">(</span>x <span style="color:#f92672">-</span> 1<span style="color:#f92672">)</span>
@@ -279,7 +297,7 @@ $$</p>
                 <span style="color:#66d9ef">return</span> True
     
     <span style="color:#66d9ef">return</span> False
-</code></pre></div><h1 id="参考文献">参考文献</h1>
+</code></pre></div><h2 id="参考文献">参考文献</h2>
 <ul>
 <li><a href="https://eli.thegreenplace.net/2018/unification/">https://eli.thegreenplace.net/2018/unification/</a></li>
 <li><a href="https://eli.thegreenplace.net/2018/type-inference/">https://eli.thegreenplace.net/2018/type-inference/</a></li>

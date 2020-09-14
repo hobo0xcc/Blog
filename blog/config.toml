@@ -25,6 +25,10 @@ SectionPagesMenu = "main"
 [markup]
   [markup.highlight]
     style = "monokai" # dark themes: monokai, api, fruity, native, rrt, swapoff
+  [markup.tableOfContents]
+    endLevel = 3
+    ordered = false
+    startLevel = 2
 
 [[menu.main]]
   name = "Posts"
@@ -62,3 +66,4 @@ SectionPagesMenu = "main"
   utterancesRepo="" # Utterances is enabled when this param is set
   utterancesTheme="github-dark" # Default: github-dark
   utterancesIssueTerm="" # Default: pathname
+  customCSS = ["css/style.css"]

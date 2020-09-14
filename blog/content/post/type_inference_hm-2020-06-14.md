@@ -11,7 +11,7 @@ math: true
 この記事では、主に型推論の実装方法について書いていきます。
 理論的な側面は必要最低限に留めますので、詳しく知りたい方は参考文献を参照してください。
 
-# 型推論とは何か
+## 型推論とは何か
 
 型推論とは何かについて軽く説明しておきましょう。
 
@@ -59,7 +59,7 @@ val a : int -> 'a -> (int -> 'a) -> 'a = <fun>
 
 次の章では、型推論がどのようにして実行されるかについて解説します。
 
-# 型推論の大まかな流れ
+## 型推論の大まかな流れ
 
 型推論は、以下のようなステップを踏みます。
 
@@ -78,7 +78,7 @@ val a : int -> 'a -> (int -> 'a) -> 'a = <fun>
 
 次の章では、型の連立方程式と単一化について詳しく説明します。
 
-# 型の連立方程式と単一化
+## 型の連立方程式と単一化
 
 型の連立方程式は、言語の制約から、どの型とどの型が等しいかを方程式にして並べたものと考えることができます。
 
@@ -212,7 +212,7 @@ def occurs_check(v, t, subst): # 型変数vが型tに現れるか
     return False
 ```
 
-# 参考文献
+## 参考文献
 
 - [https://eli.thegreenplace.net/2018/unification/](https://eli.thegreenplace.net/2018/unification/)
 - [https://eli.thegreenplace.net/2018/type-inference/](https://eli.thegreenplace.net/2018/type-inference/)
