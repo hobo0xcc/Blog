@@ -7,7 +7,7 @@
 <meta name="description" content="" />
 <meta name="keywords" content="" />
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-<meta name="generator" content="Hugo 0.73.0" />
+<meta name="generator" content="Hugo 0.75.1" />
 
 <link rel="canonical" href="https://hobo0xcc.github.io/Blog/post/type_inference_hm-2020-06-14/">
 <meta property="og:title" content="型推論の実装" />
@@ -63,13 +63,14 @@ xは整数型を持っています。これは、x == 2の部分から推論さ�
 yは任意の型xを持っています。これは、型推論で型が特に決定されなかったことを意味しています。あとで説明しますが、これは、型変数が置き換わらなかった場合です。
 zは引数として整数型を持ち、任意の型xを返します。引数に整数型を持つのは、先ほどの例と同様に、x - 1が整数型を持つためです。では、任意の型を返すのは何故でしょうか。これは、If文の制約に関係しています。If文は条件式に真偽型を持ち、thenとelseの部分で同じ型を持つようになっています。そのため、zが返す型はyと同じ任意の型xになります。
 型推論を人力で行おうとすると、このような感じになります。">
-<meta itemprop="datePublished" content="2020-06-14T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2020-06-14T00:00:00&#43;00:00" />
+<meta itemprop="datePublished" content="2020-06-14T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2020-06-14T00:00:00+00:00" />
 <meta itemprop="wordCount" content="528">
 
 
 
 <meta itemprop="keywords" content="Type Inference,Compiler Construction,C," />
+
 
 <link rel="stylesheet" href="https://hobo0xcc.github.io/Blog/css/layout.css" />
 

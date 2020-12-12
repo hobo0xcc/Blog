@@ -1,10 +1,9 @@
 ---
 title: "型推論の実装"
 date: 2020-06-14
-tags:
 categories: ["Compiler"]
 tags: ["Type Inference", "Compiler Construction", "C"]
-draft: true
+draft: false
 math: true
 ---
 
