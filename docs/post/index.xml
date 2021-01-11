@@ -7,7 +7,34 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-JP</language>
     <copyright>Copyright (c) 2020, all rights reserved.</copyright>
-    <lastBuildDate>Sun, 14 Jun 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://hobo0xcc.github.io/Blog/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 11 Jan 2021 17:14:09 +0900</lastBuildDate><atom:link href="https://hobo0xcc.github.io/Blog/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>にき 20/01/11</title>
+      <link>https://hobo0xcc.github.io/Blog/post/diary-2021-01-11/</link>
+      <pubDate>Mon, 11 Jan 2021 17:14:09 +0900</pubDate>
+      
+      <guid>https://hobo0xcc.github.io/Blog/post/diary-2021-01-11/</guid>
+      <description>自然な談話が、ある情念や感銘を描く場合、人は自分が聞いていることの真実、すなわち、前から自分のうちにあったのだが、そうとは知らずにいた真実を発見し、そこからそれを感じさせてくれた人を愛好するようになる。なぜなら、その人はわれわれにその人のよいものを示したのでなく、われわれのよいものを示してくれたのだから。このようにして、われわれとかれとのこの知的一致がかれを愛好する心を必然的におこさせるだけでなく、この好意がわれわれにかれを愛好させるのである。
+Blaise Pascal (1669). Pensées (B.パスカル 由木康(訳) (1990). パンセ 白水社 pp.18-19)
+ 誰もが知っているような普遍的真実、感覚、情景をあえて文章にして表現する。歌、詩、随筆。
+ 真の科学に特徴的なのは、それが無用な物事の研究だということである。なぜなら有用な物事は、科学に従事する人間が関わらずとも研究されるであろうから。科学者という稀有な心の持ち主を有用な物事の研究に従事させるのは、ダイアモンドを燃やして蒸気機関を動かすようなものだ。
+C.S. Peirce
+  われわれの本性は、運動にある。完全な休止は死である。
+もしも兵士か労働者が、自分の労苦について不平を言ったら、なにもさせずにおくがよい。
+Blaise Pascal (1669). Pensées (B.パスカル 由木康(訳) (1990). パンセ 白水社 p.62)
+ 歳を取るにつれて、変化を好まなくなる。死が近づいているからか？
+ われわれは事物を、ちがった面から見るだけでなく、べつの目で見る。それらを同様に見ようとしない。
+Blaise Pascal (1669). Pensées (B.パスカル 由木康(訳) (1990). パンセ 白水社 p.62)
+  ある著者たちは自分の著作のことを「わたしの本、わたしの注解、わたしの物語、等々」と言う。かれらは自分の家に住んで、しじゅう「自宅では」を口にする町人根性を脱していない。むしろ「われわれの本、われわれの注解、われわれの物語、等々」と言うべきである。その理由は、ふつうそれらのうちには、かれら自身のものよりも他人のものがいっそう多く入っているからだ。
+Blaise Pascal (1669). Pensées (B.パスカル 由木康(訳) (1990). パンセ 白水社 p.62)
+ 一人で学んだが、独りで学んでいない。謙虚さ。
+ 我々は知らねばならない、我々は知るであろう。
+D.ヒルベルト
+ 学問である。
+ 頭のよい人は、あまりに多く頭の力を過信する恐れがある。その結果として、自然がわれわれに表示する現象が自分の頭で考えたことと一致しない場合に、「自然のほうが間違っている」かのように考える恐れがある。
+寺田寅彦 科学者とあたま</description>
+    </item>
+    
     <item>
       <title>型推論の実装</title>
       <link>https://hobo0xcc.github.io/Blog/post/type_inference_hm-2020-06-14/</link>
