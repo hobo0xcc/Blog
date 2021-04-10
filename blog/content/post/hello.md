@@ -3,7 +3,7 @@ title: "hello"
 date: 2020-03-04
 tags:
 categories:
-draft: true
+draft: false
 math: true
 ---
 
