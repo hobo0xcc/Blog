@@ -10,7 +10,7 @@
 }
 .xToc_title {
     font-weight: bolder;
-    list-style-type: decimal;
+    list-style-type: square;
 }
 .xToc ul {
     list-style-type: square /*decimal*/;
