@@ -3,7 +3,7 @@ title: "情報科学における論理 演習問題"
 date: 2021-04-11
 categories: ["Practice"]
 tags: ["Logic"]
-draft: true
+draft: false
 math: true
 ---
 
