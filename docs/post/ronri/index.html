@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+
+<head>
+<meta charset="utf-8" />
+<meta name="author" content="" />
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="generator" content="Hugo 0.82.0" />
+
+<link rel="canonical" href="https://hobo0xcc.github.io/Blog/post/ronri/">
+<meta property="og:title" content="情報科学における論理 演習問題" />
+<meta property="og:description" content="『情報科学における論理』の演習問題に対する解答です．間違い・誤植など多分に含まれていると思います．ご了承ください．
+第一章 命題論理 問 1.1 次の 1), 2) のそれぞれは正しいか．正しいときにはその証明を，正しくないときには反例を与えよ．
+  $A \supset B$および$A$がともに充足可能ならば，$B$も充足可能である．
+  $A \supset B$がトートロジーで$A$が充足可能ならば，$B$も充足可能である．
+  解答   $A \supset B$が充足可能なら，ある付値$v$に対し，$(v(A) = f \lor v(B) = t) = t$となる．よって，問題は次のように言い換えられる．「ある付値$v_1, v_2, v_3$に対し，$(v_1(A) = f \lor v_1(B) = t) \land (v_2(A) = t) \supset v_3(B) = t$が成り立つ」．しかし，例えば$v_1(A) = f$かつ$v_2(A) = t$である場合を考えると，$B$が充足不可能であっても，$(v_1(A) = f \lor v_1(B) = t) \land (v_2(A) = t)=t$が成り立つことがわかる．したがって，反例が見つかったので，1 は正しくない．
+  問題は次と同値である．「[すべての付値$v$に対し，$(v(A) = f \lor v(B) = t) = t$が成り立ち]，かつ，[ある付値$v$に対し，$v(A) = t$が成り立つ]ならば，ある付値$v$に対し，$v(B) = t$が成り立つ」．ここで，「すべての付値$v$に対し，$(v(A) = f \lor v(B) = t) = t$が成り立つ」なら，すべての$v$について，$v(A) = f$か$v(B) = t$のどちらかが常に成り立っている必要がある（両方成り立たないということはない）．そして，「ある付値$v$に対し，$v(A) = t$が成り立つ」なら，少なくとも一つの$v$について$v(A) = t$である必要がある．この 2 つは両方成り立っている必要があるから，「すべての$v$について，$v(A) = f$か$v(B) = t$のどちらかが常に成り立っている」かつ，「少なくとも一つの$v$について$v(A) = t$である」．よって，少なくとも一つの$v$について$v(A) = f$が成り立たなくなるため，「すべての$v$について，$v(A) = f$か$v(B) = t$のどちらかが常に成り立っている」には，ある$v$について$v(B)=t$が成り立っている必要がある．したがって，$B$は充足可能であるため，2 は正しい．" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://hobo0xcc.github.io/Blog/post/ronri/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2021-04-11T05:18:43&#43;09:00" />
+<meta property="article:modified_time" content="2021-04-11T05:18:43&#43;09:00" />
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="情報科学における論理 演習問題"/>
+<meta name="twitter:description" content="『情報科学における論理』の演習問題に対する解答です．間違い・誤植など多分に含まれていると思います．ご了承ください．
+第一章 命題論理 問 1.1 次の 1), 2) のそれぞれは正しいか．正しいときにはその証明を，正しくないときには反例を与えよ．
+  $A \supset B$および$A$がともに充足可能ならば，$B$も充足可能である．
+  $A \supset B$がトートロジーで$A$が充足可能ならば，$B$も充足可能である．
+  解答   $A \supset B$が充足可能なら，ある付値$v$に対し，$(v(A) = f \lor v(B) = t) = t$となる．よって，問題は次のように言い換えられる．「ある付値$v_1, v_2, v_3$に対し，$(v_1(A) = f \lor v_1(B) = t) \land (v_2(A) = t) \supset v_3(B) = t$が成り立つ」．しかし，例えば$v_1(A) = f$かつ$v_2(A) = t$である場合を考えると，$B$が充足不可能であっても，$(v_1(A) = f \lor v_1(B) = t) \land (v_2(A) = t)=t$が成り立つことがわかる．したがって，反例が見つかったので，1 は正しくない．
+  問題は次と同値である．「[すべての付値$v$に対し，$(v(A) = f \lor v(B) = t) = t$が成り立ち]，かつ，[ある付値$v$に対し，$v(A) = t$が成り立つ]ならば，ある付値$v$に対し，$v(B) = t$が成り立つ」．ここで，「すべての付値$v$に対し，$(v(A) = f \lor v(B) = t) = t$が成り立つ」なら，すべての$v$について，$v(A) = f$か$v(B) = t$のどちらかが常に成り立っている必要がある（両方成り立たないということはない）．そして，「ある付値$v$に対し，$v(A) = t$が成り立つ」なら，少なくとも一つの$v$について$v(A) = t$である必要がある．この 2 つは両方成り立っている必要があるから，「すべての$v$について，$v(A) = f$か$v(B) = t$のどちらかが常に成り立っている」かつ，「少なくとも一つの$v$について$v(A) = t$である」．よって，少なくとも一つの$v$について$v(A) = f$が成り立たなくなるため，「すべての$v$について，$v(A) = f$か$v(B) = t$のどちらかが常に成り立っている」には，ある$v$について$v(B)=t$が成り立っている必要がある．したがって，$B$は充足可能であるため，2 は正しい．"/>
+
+
+<meta itemprop="name" content="情報科学における論理 演習問題">
+<meta itemprop="description" content="『情報科学における論理』の演習問題に対する解答です．間違い・誤植など多分に含まれていると思います．ご了承ください．
+第一章 命題論理 問 1.1 次の 1), 2) のそれぞれは正しいか．正しいときにはその証明を，正しくないときには反例を与えよ．
+  $A \supset B$および$A$がともに充足可能ならば，$B$も充足可能である．
+  $A \supset B$がトートロジーで$A$が充足可能ならば，$B$も充足可能である．
+  解答   $A \supset B$が充足可能なら，ある付値$v$に対し，$(v(A) = f \lor v(B) = t) = t$となる．よって，問題は次のように言い換えられる．「ある付値$v_1, v_2, v_3$に対し，$(v_1(A) = f \lor v_1(B) = t) \land (v_2(A) = t) \supset v_3(B) = t$が成り立つ」．しかし，例えば$v_1(A) = f$かつ$v_2(A) = t$である場合を考えると，$B$が充足不可能であっても，$(v_1(A) = f \lor v_1(B) = t) \land (v_2(A) = t)=t$が成り立つことがわかる．したがって，反例が見つかったので，1 は正しくない．
+  問題は次と同値である．「[すべての付値$v$に対し，$(v(A) = f \lor v(B) = t) = t$が成り立ち]，かつ，[ある付値$v$に対し，$v(A) = t$が成り立つ]ならば，ある付値$v$に対し，$v(B) = t$が成り立つ」．ここで，「すべての付値$v$に対し，$(v(A) = f \lor v(B) = t) = t$が成り立つ」なら，すべての$v$について，$v(A) = f$か$v(B) = t$のどちらかが常に成り立っている必要がある（両方成り立たないということはない）．そして，「ある付値$v$に対し，$v(A) = t$が成り立つ」なら，少なくとも一つの$v$について$v(A) = t$である必要がある．この 2 つは両方成り立っている必要があるから，「すべての$v$について，$v(A) = f$か$v(B) = t$のどちらかが常に成り立っている」かつ，「少なくとも一つの$v$について$v(A) = t$である」．よって，少なくとも一つの$v$について$v(A) = f$が成り立たなくなるため，「すべての$v$について，$v(A) = f$か$v(B) = t$のどちらかが常に成り立っている」には，ある$v$について$v(B)=t$が成り立っている必要がある．したがって，$B$は充足可能であるため，2 は正しい．"><meta itemprop="datePublished" content="2021-04-11T05:18:43&#43;09:00" />
+<meta itemprop="dateModified" content="2021-04-11T05:18:43&#43;09:00" />
+<meta itemprop="wordCount" content="102">
+<meta itemprop="keywords" content="情報科学における論理," />
+
+<link rel="stylesheet" href="https://hobo0xcc.github.io/Blog/css/layout.css" />
+
+
+<link rel="stylesheet" href="https://hobo0xcc.github.io/Blog/css/default-dark.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {delimiters: [
+      {left: "$$", right: "$$", display: true},
+      {left: "$", right: "$", display: false}]
+    });
+  });
+</script>
+
+
+<title>
+
+
+     情報科学における論理 演習問題 
+
+</title>
+
+</head>
+
+
+<body>
+<div class="main">
+<header>
+
+
+<link rel="stylesheet" href="https://hobo0xcc.github.io/Blog/css/style.css">
+
+
+<div class="header-bar">
+
+  <nav>
+    <div class="siteTitle">
+      <a href="https://hobo0xcc.github.io/Blog">0xb109</a>
+    </div> 
+
+    
+    
+    <a class="nav-item" href="https://hobo0xcc.github.io/Blog/post/"><div class="nav-item-title">Posts</div></a>
+    
+    <a class="nav-item" href="https://hobo0xcc.github.io/Blog/tags/"><div class="nav-item-title">Tags</div></a>
+    
+    <a class="nav-item" href="https://hobo0xcc.github.io/Blog/about"><div class="nav-item-title">About</div></a>
+    
+    <a class="nav-item" href="https://hobo0xcc.github.io/Blog/memo"><div class="nav-item-title">Memo</div></a>
+    
+
+  </nav>
+
+  
+<div class="social-links-header">
+
+  
+
+  
+  <a href="https://github.com/hobo0xcc" target="_blank"><div class="social-link">gh</div></a>
+  
+
+  
+
+  
+  <a href="https://twitter.com/hobo0xcc" target="_blank"><div class="social-link">twtr</div></a>
+  
+
+  
+
+</div>
+
+
+</div>
+
+
+</header>
+
+
+<article class="post">
+    <h1 class="title"> 情報科学における論理 演習問題 </h1>
+    
+          <aside class="xToc">
+            <nav id="TableOfContents">
+  <ul>
+    <li><a href="#第一章-命題論理">第一章 命題論理</a>
+      <ul>
+        <li><a href="#問-11">問 1.1</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+          </aside>
+    
+    <div class="content"> <p>『情報科学における論理』の演習問題に対する解答です．間違い・誤植など多分に含まれていると思います．ご了承ください．</p>
+<h2 id="第一章-命題論理">第一章 命題論理</h2>
+<h3 id="問-11">問 1.1</h3>
+<p>次の 1), 2) のそれぞれは正しいか．正しいときにはその証明を，正しくないときには反例を与えよ．</p>
+<ol>
+<li>
+<p>$A \supset B$および$A$がともに充足可能ならば，$B$も充足可能である．</p>
+</li>
+<li>
+<p>$A \supset B$がトートロジーで$A$が充足可能ならば，$B$も充足可能である．</p>
+</li>
+</ol>
+<h4 id="解答">解答</h4>
+<ol>
+<li>
+<p>$A \supset B$が充足可能なら，ある付値$v$に対し，$(v(A) = f \lor v(B) = t) = t$となる．よって，問題は次のように言い換えられる．「ある付値$v_1, v_2, v_3$に対し，$(v_1(A) = f \lor v_1(B) = t) \land (v_2(A) = t) \supset v_3(B) = t$が成り立つ」．しかし，例えば$v_1(A) = f$かつ$v_2(A) = t$である場合を考えると，$B$が充足不可能であっても，$(v_1(A) = f \lor v_1(B) = t) \land (v_2(A) = t)=t$が成り立つことがわかる．したがって，反例が見つかったので，1 は正しくない．</p>
+</li>
+<li>
+<p>問題は次と同値である．「[すべての付値$v$に対し，$(v(A) = f \lor v(B) = t) = t$が成り立ち]，かつ，[ある付値$v$に対し，$v(A) = t$が成り立つ]ならば，ある付値$v$に対し，$v(B) = t$が成り立つ」．ここで，「すべての付値$v$に対し，$(v(A) = f \lor v(B) = t) = t$が成り立つ」なら，すべての$v$について，$v(A) = f$か$v(B) = t$のどちらかが常に成り立っている必要がある（両方成り立たないということはない）．そして，「ある付値$v$に対し，$v(A) = t$が成り立つ」なら，少なくとも一つの$v$について$v(A) = t$である必要がある．この 2 つは両方成り立っている必要があるから，「すべての$v$について，$v(A) = f$か$v(B) = t$のどちらかが常に成り立っている」かつ，「少なくとも一つの$v$について$v(A) = t$である」．よって，少なくとも一つの$v$について$v(A) = f$が成り立たなくなるため，「すべての$v$について，$v(A) = f$か$v(B) = t$のどちらかが常に成り立っている」には，ある$v$について$v(B)=t$が成り立っている必要がある．したがって，$B$は充足可能であるため，2 は正しい．</p>
+</li>
+</ol>
+ </div>
+    <footer class="post-footer">
+
+  <div class="post-footer-data">
+            
+<div class="tags">
+  
+    
+      <div class="tag">
+        <a href="https://hobo0xcc.github.io/Blog/tags/%E6%83%85%E5%A0%B1%E7%A7%91%E5%AD%A6%E3%81%AB%E3%81%8A%E3%81%91%E3%82%8B%E8%AB%96%E7%90%86">#情報科学における論理</a>
+      </div>
+    
+  
+</div>
+
+    <div class="date"> 2021-04-11 </div>
+    
+    <hr>
+            
+<div class="categories">
+  
+  Published in:
+    
+      <div class="category">
+        <a href="https://hobo0xcc.github.io/Blog/categories/%E6%95%B0%E5%AD%A6">数学</a>
+      </div>
+    
+      <div class="category">
+        <a href="https://hobo0xcc.github.io/Blog/categories/%E6%95%B0%E7%90%86%E8%AB%96%E7%90%86%E5%AD%A6">数理論理学</a>
+      </div>
+    
+  
+</div>
+
+            
+<div class="series">
+  
+</div>
+
+    
+  </div>
+</footer>
+
+
+  
+  
+
+
+
+</article>
+
+  <footer>
+
+  <div class="social-links-footer">
+
+  
+
+  
+  <a href="https://github.com/hobo0xcc" target="_blank"><div class="social-link">GitHub</div></a>
+  
+
+  
+
+  
+  <a href="https://twitter.com/hobo0xcc" target="_blank"><div class="social-link">Twitter</div></a>
+  
+
+  
+
+  <div class="social-link">
+  <a href="https://hobo0xcc.github.io/Blog/index.xml" target="_blank">RSS</a>
+  </div>
+
+</div>
+
+
+  <div class="copyright"> Copyright (c) 2021, all rights reserved. </div>
+
+  <div class="poweredby">
+    Powered by <a href="https://gohugo.io/">Hugo</a>.
+  </div>
+
+  </footer>
+
+</div> 
+
+</body>
+</html>
+

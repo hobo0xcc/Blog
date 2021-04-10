@@ -6,7 +6,7 @@
     <description>Recent content in Compiler Construction on 0xb109</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-JP</language>
-    <copyright>Copyright (c) 2020, all rights reserved.</copyright>
+    <copyright>Copyright (c) 2021, all rights reserved.</copyright>
     <lastBuildDate>Sun, 14 Jun 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://hobo0xcc.github.io/Blog/tags/compiler-construction/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>型推論の実装</title>

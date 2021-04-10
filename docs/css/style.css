@@ -13,7 +13,7 @@
     list-style-type: decimal;
 }
 .xToc ul {
-    list-style-type: decimal;
+    list-style-type: square /*decimal*/;
     padding-left: 15%;
     box-sizing: border-box;
 }

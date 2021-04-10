@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="ja-JP">
 
@@ -10,19 +9,19 @@
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
 <meta name="generator" content="Hugo 0.82.0" />
 
-<link rel="canonical" href="https://hobo0xcc.github.io/Blog/">
-<meta property="og:title" content="0xb109" />
+<link rel="canonical" href="https://hobo0xcc.github.io/Blog/tags/%E6%83%85%E5%A0%B1%E7%A7%91%E5%AD%A6%E3%81%AB%E3%81%8A%E3%81%91%E3%82%8B%E8%AB%96%E7%90%86/">
+<meta property="og:title" content="情報科学における論理" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://hobo0xcc.github.io/Blog/" />
+<meta property="og:url" content="https://hobo0xcc.github.io/Blog/tags/%E6%83%85%E5%A0%B1%E7%A7%91%E5%AD%A6%E3%81%AB%E3%81%8A%E3%81%91%E3%82%8B%E8%AB%96%E7%90%86/" />
 
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="0xb109"/>
+<meta name="twitter:title" content="情報科学における論理"/>
 <meta name="twitter:description" content=""/>
 
 
-<meta itemprop="name" content="0xb109">
+<meta itemprop="name" content="情報科学における論理">
 <meta itemprop="description" content="">
 
 <link rel="stylesheet" href="https://hobo0xcc.github.io/Blog/css/layout.css" />
@@ -33,24 +32,10 @@
 
 
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"
-    onload="renderMathInElement(document.body);"></script>
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
-    renderMathInElement(document.body, {delimiters: [
-      {left: "$$", right: "$$", display: true},
-      {left: "$", right: "$", display: false}]
-    });
-  });
-</script>
-
-
 <title>
 
 
-    0xb109
+     情報科学における論理 
 
 </title>
 
@@ -111,10 +96,11 @@
 </header>
 
 
-<main>
+<h2 class="term-list-title">
+    <a href="https://hobo0xcc.github.io/Blog/tags/%E6%83%85%E5%A0%B1%E7%A7%91%E5%AD%A6%E3%81%AB%E3%81%8A%E3%81%91%E3%82%8B%E8%AB%96%E7%90%86/" class="linktopost">tag: 情報科学における論理</a>
+</h2>
 
 
-  
     <article class="post-preview">
 
   <header>
@@ -155,107 +141,6 @@
 </article>
 
 
-    <article class="post-preview">
-
-  <header>
-    <h2 class="title"> <a href='https://hobo0xcc.github.io/Blog/post/type_inference_hm-2020-06-14/'> 型推論の実装</a> </h2>
-    <div class="meta">
-      <div class="date">
-      14 Jun, 2020 - 3 minutes
-      </div>
-      
-<div class="tags">
-  
-    
-      <div class="tag">
-        <a href="https://hobo0xcc.github.io/Blog/tags/type-inference">#Type Inference</a>
-      </div>
-    
-      <div class="tag">
-        <a href="https://hobo0xcc.github.io/Blog/tags/compiler-construction">#Compiler Construction</a>
-      </div>
-    
-      <div class="tag">
-        <a href="https://hobo0xcc.github.io/Blog/tags/c">#C</a>
-      </div>
-    
-  
-</div>
-
-    </div>
-
-  </header>
-
-  <div class="summary">
-    この記事では、主に型推論の実装方法について書いていきます。 理論的な側面は必要最低限に留めますので、詳しく知りたい方は参考文献を参照してください。
-型推論とは何か 型推論とは何かについて軽く説明しておきましょう。
-型推論とは、プログラムの変数や引数などの型を、明示的な指定がなくても自動的に推論し、決定する機構のことです。 たとえば、以下のような OCaml プログラムを考えてみましょう。
-let f x y = x + y;; このプログラムはxとyを引数として、それらの和を返しています。OCaml の REPL で実行してみると、この関数は引数として整数を 2 つ持ち、整数を返す関数として定義されます。 xとyには何も型を指定していないのに、整数であると決定されるわけです。
-val f : int -&gt; int -&gt; int = &lt;fun&gt; このように、型推論は型を周辺状況や文脈などから決定してくれます。
-上記の例では、+演算子が左辺と右辺に整数をとり、整数を返す、という情報から関数の型を推論しています。このような単純な型推論は比較的簡単に実装できるでしょう。
-今度は少し複雑な例を考えてみましょう。
-let a x y z = if x == 2 then y else z(x - 1) この関数は以下の型を持ちます。
-val a : int -&gt; &#39;a -&gt; (int -&gt; &#39;a) -&gt; &#39;a = &lt;fun&gt; 整数、任意の型x、引数として整数を持ち、任意の型xを返す関数、これらを引数として、任意の型xを返す関数、という型を持っています。
-それぞれの引数について、なぜその型を持つのかについて説明します。
-xは整数型を持っています。これは、x == 2の部分から推論されています。==演算子は左辺と右辺に同じ型をとるので、右辺の2と同じ型を持っていなくてはなりません。このことから、xは整数型を持つことがわかります。
-  </div>
-
-  <div class="rmore">
-    <a href='https://hobo0xcc.github.io/Blog/post/type_inference_hm-2020-06-14/' class="rmore">Read more</a>
-  </div>
-
-
-</article>
-
-
-    <article class="post-preview">
-
-  <header>
-    <h2 class="title"> <a href='https://hobo0xcc.github.io/Blog/post/hello/'> hello</a> </h2>
-    <div class="meta">
-      <div class="date">
-      4 Mar, 2020 - 1 minutes
-      </div>
-      
-<div class="tags">
-  
-</div>
-
-    </div>
-
-  </header>
-
-  <div class="summary">
-    Hello, world! こんにちは世界!
-#include &lt;iostream&gt; using namespace std; int main() { cout &lt;&lt; &#34;Hello, world!&#34; &lt;&lt; endl; return 0; } $ e^{i\pi} = -1 $
-  </div>
-
-  <div class="rmore">
-    <a href='https://hobo0xcc.github.io/Blog/post/hello/' class="rmore">Read more</a>
-  </div>
-
-
-</article>
-
-
-
-
-<div class="page-nav">
-  <div class="page-prev">
-    
-  </div> 
-
-  <div class="page-num">
-    1/1
-  </div> 
-
-  <div class="page-next">
-    
-  </div> 
-</div> 
-
-
-</main>
 
   <footer>
 
