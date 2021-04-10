@@ -15,13 +15,13 @@ math: true
 型推論とは何かについて軽く説明しておきましょう。
 
 型推論とは、プログラムの変数や引数などの型を、明示的な指定がなくても自動的に推論し、決定する機構のことです。
-たとえば、以下のようなOCamlプログラムを考えてみましょう。
+たとえば、以下のような OCaml プログラムを考えてみましょう。
 
 ```OCaml
 let f x y = x + y;;
 ```
 
-このプログラムは`x`と`y`を引数として、それらの和を返しています。OCamlのREPLで実行してみると、この関数は引数として整数を2つ持ち、整数を返す関数として定義されます。
+このプログラムは`x`と`y`を引数として、それらの和を返しています。OCaml の REPL で実行してみると、この関数は引数として整数を 2 つ持ち、整数を返す関数として定義されます。
 `x`と`y`には何も型を指定していないのに、整数であると決定されるわけです。
 
 ```OCaml
@@ -52,7 +52,7 @@ val a : int -> 'a -> (int -> 'a) -> 'a = <fun>
 
 `y`は任意の型`x`を持っています。これは、型推論で型が特に決定されなかったことを意味しています。あとで説明しますが、これは、**型変数**が置き換わらなかった場合です。
 
-`z`は引数として整数型を持ち、任意の型`x`を返します。引数に整数型を持つのは、先ほどの例と同様に、`x - 1`が整数型を持つためです。では、任意の型を返すのは何故でしょうか。これは、If文の制約に関係しています。If文は条件式に真偽型を持ち、thenとelseの部分で同じ型を持つようになっています。そのため、`z`が返す型は`y`と同じ任意の型`x`になります。
+`z`は引数として整数型を持ち、任意の型`x`を返します。引数に整数型を持つのは、先ほどの例と同様に、`x - 1`が整数型を持つためです。では、任意の型を返すのは何故でしょうか。これは、If 文の制約に関係しています。If 文は条件式に真偽型を持ち、then と else の部分で同じ型を持つようになっています。そのため、`z`が返す型は`y`と同じ任意の型`x`になります。
 
 型推論を人力で行おうとすると、このような感じになります。
 
@@ -67,13 +67,13 @@ val a : int -> 'a -> (int -> 'a) -> 'a = <fun>
 3. 型の連立方程式を立てる
 4. 単一化(Unification)して、型変数についての代入(Substitution)を生成する。
 
-1つめのステップでは、12や42のような整数値、trueやfalseのような真偽値などにそれぞれの型を付けます。これらはすでに明らかなので、そのまま代入します。
+1 つめのステップでは、12 や 42 のような整数値、true や false のような真偽値などにそれぞれの型を付けます。これらはすでに明らかなので、そのまま代入します。
 
-2つめのステップでは、**明らかでない**ものに型変数を代入します。たとえば、関数の引数などは最初のステップでは明らかでないので、型変数が代入されます。
+2 つめのステップでは、**明らかでない**ものに型変数を代入します。たとえば、関数の引数などは最初のステップでは明らかでないので、型変数が代入されます。
 
-3つめのステップでは、型についての連立方程式を立てます。これは数学の連立方程式と同じように、どの型とどの型が等しい(= 同じ型を持つ)かを方程式にします。たとえば、If文の条件式は真偽型と等しく、thenとelseの型は等しい、といった感じです。
+3 つめのステップでは、型についての連立方程式を立てます。これは数学の連立方程式と同じように、どの型とどの型が等しい(= 同じ型を持つ)かを方程式にします。たとえば、If 文の条件式は真偽型と等しく、then と else の型は等しい、といった感じです。
 
-4つめのステップでは、単一化(Unification)という作業を行います。これは、2つの型が与えられた時、型変数を置き換えて(= 型変数を消して)、型を等しくします。
+4 つめのステップでは、単一化(Unification)という作業を行います。これは、2 つの型が与えられた時、型変数を置き換えて(= 型変数を消して)、型を等しくします。
 
 次の章では、型の連立方程式と単一化について詳しく説明します。
 
@@ -87,7 +87,7 @@ val a : int -> 'a -> (int -> 'a) -> 'a = <fun>
 let a x y z = if x == 2 then y else z(x - 1)
 ```
 
-例えば、`x == 2`の部分はIf文のルールから、真偽型と等しいことがわかります。さらに、`then y else z(x - 1)`の`y`と`z(x - 1)`も等しいことがわかります。
+例えば、`x == 2`の部分は If 文のルールから、真偽型と等しいことがわかります。さらに、`then y else z(x - 1)`の`y`と`z(x - 1)`も等しいことがわかります。
 
 このように、言語の制約(= ルール)から、型の連立方程式を立てていきます。
 
@@ -123,15 +123,15 @@ $\Gamma \vdash e_1 : \tau$ も同様です。
 
 ## 型の連立方程式の生成
 
-If文は以下の型付け規則を持っているとします。
+If 文は以下の型付け規則を持っているとします。
 
 $$
 \frac{\Gamma \vdash e_0 : \mathtt{Bool} \quad \Gamma \vdash e_1 : \tau \quad \Gamma \vdash e_2 : \tau}{\Gamma \vdash \mathtt{if} \quad e_0 \quad \mathtt{then} \quad e_1 \quad \mathtt{else} \quad e_2 : \tau}
 $$
 
-この時、$e_0 = \mathtt{Bool}$ と $e_1 = e_2 = \tau$ という2つの方程式が生成されます。
+この時、$e_0 = \mathtt{Bool}$ と $e_1 = e_2 = \tau$ という 2 つの方程式が生成されます。
 
-これがIf文から生成される方程式です。実装ではVectorやListに方程式を追加していきます。
+これが If 文から生成される方程式です。実装では Vector や List に方程式を追加していきます。
 
 同様に、`+`演算子や`==`演算子の型付け規則も定義できます。
 
@@ -147,9 +147,9 @@ $$
 
 ## 単一化
 
-2つの型が与えられた時、それらを等しくする型変数への代入(Substitution)を決定するのが単一化です。
+2 つの型が与えられた時、それらを等しくする型変数への代入(Substitution)を決定するのが単一化です。
 
-例えば、以下のような2つの関数型を単一化することを考えましょう。
+例えば、以下のような 2 つの関数型を単一化することを考えましょう。
 ここで、大文字は型変数、小文字は定数、g(...)のようなものは関数の適用とします。
 
 `f(V, a, K)`
@@ -160,7 +160,7 @@ $$
 
 まず、一番左をみると、{V=v}と代入すれば良いことがわかります。
 
-次に、左から2番目をみると、{V=v, U=a}となります。
+次に、左から 2 番目をみると、{V=v, U=a}となります。
 
 一番右をみると、これは{V=v, U=a, K=bar(U)}となります。
 
@@ -168,7 +168,7 @@ $$
 
 ## 単一化のアルゴリズム
 
-単一化のアルゴリズムをPythonに似た疑似コードで示します。
+単一化のアルゴリズムを Python に似た疑似コードで示します。
 
 ```python
 def unify(x, y, subst): # xとyは方程式の左辺と右辺。substは代入。
@@ -207,15 +207,15 @@ def occurs_check(v, t, subst): # 型変数vが型tに現れるか
         for i in range(len(t.args)): # 引数にvが現れるか
             if occurs_check(v, t.args[i], subst):
                 return True
-    
+
     return False
 ```
 
 ## 参考文献
 
-- [https://eli.thegreenplace.net/2018/unification/](https://eli.thegreenplace.net/2018/unification/)
-- [https://eli.thegreenplace.net/2018/type-inference/](https://eli.thegreenplace.net/2018/type-inference/)
-- [https://en.wikipedia.org/wiki/Hindley%E2%80%93Milner_type_system](https://en.wikipedia.org/wiki/Hindley%E2%80%93Milner_type_system)
-- [Basic Type checking](http://lucacardelli.name/Papers/BasicTypechecking.pdf)
-- [An Efficient Unification Algorithm](http://www.nsl.com/misc/papers/martelli-montanari.pdf)
-- [Correcting A Widespread Error in Unification Algorithms](https://norvig.com/unify-bug.pdf)
+-   [https://eli.thegreenplace.net/2018/unification/](https://eli.thegreenplace.net/2018/unification/)
+-   [https://eli.thegreenplace.net/2018/type-inference/](https://eli.thegreenplace.net/2018/type-inference/)
+-   [https://en.wikipedia.org/wiki/Hindley%E2%80%93Milner_type_system](https://en.wikipedia.org/wiki/Hindley%E2%80%93Milner_type_system)
+-   [Basic Type checking](http://lucacardelli.name/Papers/BasicTypechecking.pdf)
+-   [An Efficient Unification Algorithm](http://www.nsl.com/misc/papers/martelli-montanari.pdf)
+-   [Correcting A Widespread Error in Unification Algorithms](https://norvig.com/unify-bug.pdf)

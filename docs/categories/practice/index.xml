@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Practice on 0xb109</title>
+    <link>https://hobo0xcc.github.io/Blog/categories/practice/</link>
+    <description>Recent content in Practice on 0xb109</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-JP</language>
+    <copyright>Copyright (c) 2020, all rights reserved.</copyright>
+    <lastBuildDate>Sun, 11 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://hobo0xcc.github.io/Blog/categories/practice/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>情報科学における論理 演習問題</title>
+      <link>https://hobo0xcc.github.io/Blog/post/jouhoukagakuniokeruronri/</link>
+      <pubDate>Sun, 11 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://hobo0xcc.github.io/Blog/post/jouhoukagakuniokeruronri/</guid>
+      <description>『情報科学における論理』の演習問題に対する解答です．間違い・誤植など多分に含まれていると思います．ご了承ください．
+第一章 命題論理 問 1.1 次の 1), 2) のそれぞれは正しいか．正しいときにはその証明を，正しくないときには反例を与えよ．
+  $A \supset B$および$A$がともに充足可能ならば，$B$も充足可能である．
+  $A \supset B$がトートロジーで$A$が充足可能ならば，$B$も充足可能である．
+  解答 1.11   $A \supset B$は充足可能であるから，ある付値$v$に対し，$(v(A) = f \lor v(B) = t) = t$となる．よって，問題は次のように言い換えられる．「ある付値$v_1, v_2, v_3$に対し，$(v_1(A) = f \lor v_1(B) = t) \land (v_2(A) = t) \supset v_3(B) = t$が成り立つ」．しかし，例えば$v_1(A) = f$かつ$v_2(A) = t$である場合を考えると，$B$が充足不可能であっても，$(v_1(A) = f \lor v_1(B) = t) \land (v_2(A) = t)=t$が成り立つことがわかる．したがって，反例が見つかったので，1 は正しくない．
+  問題は次と同値である．「[すべての付値$v$に対し，$(v(A) = f \lor v(B) = t) = t$が成り立ち]，かつ，[ある付値$v$に対し，$v(A) = t$が成り立つ]ならば，ある付値$v$に対し，$v(B) = t$が成り立つ」．ここで，「すべての付値$v$に対し，$(v(A) = f \lor v(B) = t) = t$が成り立つ」なら，すべての v について，$v(A) = f$か$v(B) = t$のどちらかが常に成り立っている必要がある（両方成り立たないということはない）．そして，「ある付値$v$に対し，$v(A) = t$が成り立つ」なら，少なくとも一つの v について$v(A) = t$である必要がある．この 2 つは両方成り立っている必要があるから，「すべての v について，$v(A) = f$か$v(B) = t$のどちらかが常に成り立っている」かつ，「少なくとも一つの v について$v(A) = t$である」．よって，少なくとも一つの$v$について$v(A) = f$が成り立たなくなるため，「すべての v について，$v(A) = f$か$v(B) = t$のどちらかが常に成り立っている」には，ある v について$v(B)=t$が成り立ってい必要がある．したがって，B は充足可能であるため，2 は正しい．</description>
+    </item>
+    
+  </channel>
+</rss>
