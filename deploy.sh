@@ -1,6 +1,6 @@
 #!/bin/bash
 cd blog
-hugo -D
+hugo
 cd ..
 git add .
 git commit -m "Update"
