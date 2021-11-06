@@ -10,7 +10,7 @@ math: true
 Hello, world!
 こんにちは世界!
 
-```c++
+```c++ {linenos=table}
 #include <iostream>
 
 using namespace std;

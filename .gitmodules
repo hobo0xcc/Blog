@@ -1,15 +1,3 @@
-[submodule "themes/basics"]
-	path = themes/basics
-	url = https://github.com/arjunkrishnababu96/basics.git
-[submodule "hugo/themes/basics"]
-	path = hugo/themes/basics
-	url = https://github.com/arjunkrishnababu96/basics.git
-[submodule "hugo/themes/docdock"]
-	path = hugo/themes/docdock
-	url = https://github.com/vjeantet/hugo-theme-docdock.git
-[submodule "hugo/themes/hugo-base16-theme"]
-	path = hugo/themes/hugo-base16-theme
-	url = https://github.com/htdvisser/hugo-base16-theme.git
-[submodule "zola/themes/terminimal"]
-	path = zola/themes/terminimal
-	url = https://github.com/pawroman/zola-theme-terminimal.git
+[submodule "blog/themes/hugo-dusk"]
+	path = blog/themes/hugo-dusk
+	url = https://github.com/gyorb/hugo-dusk

@@ -1,5 +1,5 @@
 body {
-  font-family: sans-serif, serif;
+  font-family: "Arial", Gadget, sans-serif;
   counter-reset: heading;
   margin: 0;
 }

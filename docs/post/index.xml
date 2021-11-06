@@ -48,7 +48,7 @@ xは整数型を持っています。これは、x == 2の部分から推論さ�
       
       <guid>https://hobo0xcc.github.io/Blog/post/hello/</guid>
       <description>Hello, world! こんにちは世界!
-#include &amp;lt;iostream&amp;gt; using namespace std; int main() { cout &amp;lt;&amp;lt; &amp;#34;Hello, world!&amp;#34; &amp;lt;&amp;lt; endl; return 0; } $ e^{i\pi} = -1 $</description>
+1 2 3 4 5 6 7 8  #include &amp;lt;iostream&amp;gt; using namespace std; int main() { cout &amp;lt;&amp;lt; &amp;#34;Hello, world!&amp;#34; &amp;lt;&amp;lt; endl; return 0; }   $ e^{i\pi} = -1 $</description>
     </item>
     
   </channel>
