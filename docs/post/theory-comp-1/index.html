@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+
+<head>
+<meta charset="utf-8" />
+<meta name="author" content="" />
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="generator" content="Hugo 0.88.1" />
+
+<link rel="canonical" href="https://hobo0xcc.github.io/Blog/post/theory-comp-1/">
+<meta property="og:title" content="計算理論の基礎 オートマトンと言語 読書ノート" />
+<meta property="og:description" content="『計算理論の基礎 原著第2版』の読書ノート。
+方針 実はしばらく前に少し読んだのだが、その時は正規言語の途中までやって放置してしまった。今回改めて読み進めるにあたっての方針として、以下を挙げる。
+ 演習問題はできる限り自力で解く 定理と証明は書き写す  進捗  2021/11/06: 開始  第0章 / 序論  オートマトン、計算可能性、複雑さのついての教科書  計算機の本質的な能力とその限界は何か？   計算問題には優しい問題と難しい問題がある  ソーティング問題 &hellip; 優しい スケジューリング問題 &hellip; 難しい   何が、問題の難しさ・やさしさを決めているのだろうか？  いまだに明確な答えが得られていない   計算の困難さに基づいて問題を分類するうまい方法の発見  計算が難しいことの証拠を示すことができる   計算が困難な問題の対処  難しさの根源がどこにあるか 難しい部分の変更によって解決 完全な解を諦めることで解決   初期の暗号  問題は難しいものより簡単な方が望ましい 暗号は難しいほうが望ましい   計算可能性の理論  計算機の理論的モデル   オートマトン理論  計算の数学的モデル    第1章 / 正規言語  計算のモデル（computational model）  有限オートマトン（finite automaton）   Markov連鎖（Markov chain）  有限オートマトンに確率的要素を許す パターンの認識を試みる際に有益 音声処理、光学的文字認識、価格変動のモデル化・予測   有限オートマトンの状態遷移図  開始状態（start state）、受理状態（accept state）、遷移（transition） 入力を処理し、その出力は受理（accept）または拒否（reject）のいずれか一方   有限オートマトンの正式な定義  有限オートマトンは以下の5個のもののリスト  状態の集合 入力アルファベット 動作規則 開始状態 受理状態   動作規則 &hellip; $\delta$ で表される遷移関数を用いる  オートマトンが状態 $x$ にあって $1$ を読み出したときに状態 $y$ へ移る = $\delta(x, 1) = y$      定義1." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://hobo0xcc.github.io/Blog/post/theory-comp-1/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2021-11-06T09:20:40+09:00" />
+<meta property="article:modified_time" content="2021-11-06T09:20:40+09:00" />
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="計算理論の基礎 オートマトンと言語 読書ノート"/>
+<meta name="twitter:description" content="『計算理論の基礎 原著第2版』の読書ノート。
+方針 実はしばらく前に少し読んだのだが、その時は正規言語の途中までやって放置してしまった。今回改めて読み進めるにあたっての方針として、以下を挙げる。
+ 演習問題はできる限り自力で解く 定理と証明は書き写す  進捗  2021/11/06: 開始  第0章 / 序論  オートマトン、計算可能性、複雑さのついての教科書  計算機の本質的な能力とその限界は何か？   計算問題には優しい問題と難しい問題がある  ソーティング問題 &hellip; 優しい スケジューリング問題 &hellip; 難しい   何が、問題の難しさ・やさしさを決めているのだろうか？  いまだに明確な答えが得られていない   計算の困難さに基づいて問題を分類するうまい方法の発見  計算が難しいことの証拠を示すことができる   計算が困難な問題の対処  難しさの根源がどこにあるか 難しい部分の変更によって解決 完全な解を諦めることで解決   初期の暗号  問題は難しいものより簡単な方が望ましい 暗号は難しいほうが望ましい   計算可能性の理論  計算機の理論的モデル   オートマトン理論  計算の数学的モデル    第1章 / 正規言語  計算のモデル（computational model）  有限オートマトン（finite automaton）   Markov連鎖（Markov chain）  有限オートマトンに確率的要素を許す パターンの認識を試みる際に有益 音声処理、光学的文字認識、価格変動のモデル化・予測   有限オートマトンの状態遷移図  開始状態（start state）、受理状態（accept state）、遷移（transition） 入力を処理し、その出力は受理（accept）または拒否（reject）のいずれか一方   有限オートマトンの正式な定義  有限オートマトンは以下の5個のもののリスト  状態の集合 入力アルファベット 動作規則 開始状態 受理状態   動作規則 &hellip; $\delta$ で表される遷移関数を用いる  オートマトンが状態 $x$ にあって $1$ を読み出したときに状態 $y$ へ移る = $\delta(x, 1) = y$      定義1."/>
+
+
+<meta itemprop="name" content="計算理論の基礎 オートマトンと言語 読書ノート">
+<meta itemprop="description" content="『計算理論の基礎 原著第2版』の読書ノート。
+方針 実はしばらく前に少し読んだのだが、その時は正規言語の途中までやって放置してしまった。今回改めて読み進めるにあたっての方針として、以下を挙げる。
+ 演習問題はできる限り自力で解く 定理と証明は書き写す  進捗  2021/11/06: 開始  第0章 / 序論  オートマトン、計算可能性、複雑さのついての教科書  計算機の本質的な能力とその限界は何か？   計算問題には優しい問題と難しい問題がある  ソーティング問題 &hellip; 優しい スケジューリング問題 &hellip; 難しい   何が、問題の難しさ・やさしさを決めているのだろうか？  いまだに明確な答えが得られていない   計算の困難さに基づいて問題を分類するうまい方法の発見  計算が難しいことの証拠を示すことができる   計算が困難な問題の対処  難しさの根源がどこにあるか 難しい部分の変更によって解決 完全な解を諦めることで解決   初期の暗号  問題は難しいものより簡単な方が望ましい 暗号は難しいほうが望ましい   計算可能性の理論  計算機の理論的モデル   オートマトン理論  計算の数学的モデル    第1章 / 正規言語  計算のモデル（computational model）  有限オートマトン（finite automaton）   Markov連鎖（Markov chain）  有限オートマトンに確率的要素を許す パターンの認識を試みる際に有益 音声処理、光学的文字認識、価格変動のモデル化・予測   有限オートマトンの状態遷移図  開始状態（start state）、受理状態（accept state）、遷移（transition） 入力を処理し、その出力は受理（accept）または拒否（reject）のいずれか一方   有限オートマトンの正式な定義  有限オートマトンは以下の5個のもののリスト  状態の集合 入力アルファベット 動作規則 開始状態 受理状態   動作規則 &hellip; $\delta$ で表される遷移関数を用いる  オートマトンが状態 $x$ にあって $1$ を読み出したときに状態 $y$ へ移る = $\delta(x, 1) = y$      定義1."><meta itemprop="datePublished" content="2021-11-06T09:20:40+09:00" />
+<meta itemprop="dateModified" content="2021-11-06T09:20:40+09:00" />
+<meta itemprop="wordCount" content="398">
+<meta itemprop="keywords" content="" />
+
+<link rel="stylesheet" href="https://hobo0xcc.github.io/Blog/css/layout.css" />
+
+
+<link rel="stylesheet" href="https://hobo0xcc.github.io/Blog/css/default-dark.css" />
+
+
+
+
+<title>
+
+
+     計算理論の基礎 オートマトンと言語 読書ノート 
+
+</title>
+
+</head>
+
+
+<body>
+<div class="main">
+<header>
+
+<div class="header-bar">
+
+  <nav>
+    <div class="siteTitle">
+      <a href="https://hobo0xcc.github.io/Blog">0xb109</a>
+    </div> 
+
+    
+    
+    <a class="nav-item" href="https://hobo0xcc.github.io/Blog/post/"><div class="nav-item-title">Posts</div></a>
+    
+    <a class="nav-item" href="https://hobo0xcc.github.io/Blog/tags/"><div class="nav-item-title">Tags</div></a>
+    
+    <a class="nav-item" href="https://hobo0xcc.github.io/Blog/about"><div class="nav-item-title">About</div></a>
+    
+    <a class="nav-item" href="https://hobo0xcc.github.io/Blog/memo"><div class="nav-item-title">Memo</div></a>
+    
+
+  </nav>
+
+  
+<div class="social-links-header">
+
+  
+
+  
+  <a href="https://github.com/hobo0xcc" target="_blank"><div class="social-link">gh</div></a>
+  
+
+  
+
+  
+  <a href="https://twitter.com/hobo0xcc" target="_blank"><div class="social-link">twtr</div></a>
+  
+
+  
+
+</div>
+
+
+</div>
+
+
+</header>
+
+
+<article class="post">
+    <h1 class="title"> 計算理論の基礎 オートマトンと言語 読書ノート </h1>
+    <div class="content"> <p>『計算理論の基礎 原著第2版』の読書ノート。</p>
+<h2 id="方針">方針</h2>
+<p>実はしばらく前に少し読んだのだが、その時は正規言語の途中までやって放置してしまった。今回改めて読み進めるにあたっての方針として、以下を挙げる。</p>
+<ul>
+<li>演習問題はできる限り自力で解く</li>
+<li>定理と証明は書き写す</li>
+</ul>
+<h2 id="進捗">進捗</h2>
+<ul>
+<li>2021/11/06: 開始</li>
+</ul>
+<h1 id="第0章--序論">第0章 / 序論</h1>
+<ul>
+<li>オートマトン、計算可能性、複雑さのついての教科書
+<ul>
+<li>計算機の本質的な能力とその限界は何か？</li>
+</ul>
+</li>
+<li>計算問題には優しい問題と難しい問題がある
+<ul>
+<li>ソーティング問題 &hellip; 優しい</li>
+<li>スケジューリング問題 &hellip; 難しい</li>
+</ul>
+</li>
+<li>何が、問題の難しさ・やさしさを決めているのだろうか？
+<ul>
+<li>いまだに明確な答えが得られていない</li>
+</ul>
+</li>
+<li>計算の困難さに基づいて問題を分類するうまい方法の発見
+<ul>
+<li>計算が難しいことの証拠を示すことができる</li>
+</ul>
+</li>
+<li>計算が困難な問題の対処
+<ul>
+<li>難しさの根源がどこにあるか</li>
+<li>難しい部分の変更によって解決</li>
+<li>完全な解を諦めることで解決</li>
+</ul>
+</li>
+<li>初期の暗号
+<ul>
+<li>問題は難しいものより簡単な方が望ましい</li>
+<li>暗号は難しいほうが望ましい</li>
+</ul>
+</li>
+<li>計算可能性の理論
+<ul>
+<li>計算機の理論的モデル</li>
+</ul>
+</li>
+<li>オートマトン理論
+<ul>
+<li>計算の数学的モデル</li>
+</ul>
+</li>
+</ul>
+<h1 id="第1章--正規言語">第1章 / 正規言語</h1>
+<ul>
+<li>計算のモデル（<em>computational model</em>）
+<ul>
+<li>有限オートマトン（<em>finite automaton</em>）</li>
+</ul>
+</li>
+<li>Markov連鎖（<em>Markov chain</em>）
+<ul>
+<li>有限オートマトンに確率的要素を許す</li>
+<li>パターンの認識を試みる際に有益</li>
+<li>音声処理、光学的文字認識、価格変動のモデル化・予測</li>
+</ul>
+</li>
+<li>有限オートマトンの状態遷移図
+<ul>
+<li>開始状態（<em>start state</em>）、受理状態（<em>accept state</em>）、遷移（<em>transition</em>）</li>
+<li>入力を処理し、その出力は受理（<em>accept</em>）または拒否（<em>reject</em>）のいずれか一方</li>
+</ul>
+</li>
+<li>有限オートマトンの正式な定義
+<ul>
+<li>有限オートマトンは以下の5個のもののリスト
+<ul>
+<li>状態の集合</li>
+<li>入力アルファベット</li>
+<li>動作規則</li>
+<li>開始状態</li>
+<li>受理状態</li>
+</ul>
+</li>
+<li>動作規則 &hellip; $\delta$ で表される遷移関数を用いる
+<ul>
+<li>オートマトンが状態 $x$ にあって $1$ を読み出したときに状態 $y$ へ移る = $\delta(x, 1) = y$</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="定義15">定義1.5</h2>
+<p>有限オートマトン（<em>finite automaton</em>）は5個組（ $Q, \Sigma, \delta, q_0, F$ ）である。ここで、</p>
+<ol>
+<li>$Q$ は状態（<em>state</em>）と呼ばれる有限集合</li>
+<li>$\Sigma$ はアルファベット（<em>alphabet</em>）と呼ばれる有限集合</li>
+<li>$\delta : Q \times \Sigma \longrightarrow Q$ は遷移関数（<em>transition function</em>）</li>
+<li>$q_0 \in Q$ は開始状態（<em>start state</em>）</li>
+<li>$F \subseteq Q$ は受理状態の集合（<em>set of accept states</em>）</li>
+</ol>
+<ul>
+<li>言語
+<ul>
+<li>$A$ を、機械 $M$ が受理するすべての文字列の集合とするならば、 $A$ は機械 $M$ の言語（<em>language of machine M</em>）であるといい、 $L(M) = A$ と書く</li>
+<li>$M$ は $A$ を認識する（<em>M recognizes A</em>）</li>
+<li>機械は、つねに唯一つの言語を認識する
+<ul>
+<li>文字列を一つも受理しない場合、 $\emptyset$ （空言語） を認識する</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>有限オートマトンの計算
+<ul>
+<li>$M = (Q, \Sigma, \delta, q_0, F)$ を有限オートマトンとし、 $w = w_1w_2 \cdots w_n$ は文字列で、各 $w_i$ はアルファベット $\Sigma$ の要素とする。以下の三条件をみたす状態の列 $r_0, r_1, \ldots , r_n \in Q$ が存在するならば、 $M$ は $w$ を受理する（<em>accept</em>）という。
+<ul>
+<li>$r_0 = q_0$</li>
+<li>$i = 0, \ldots , n - 1$ のとき、 $\delta(r_i, w_{i + 1}) = r_{i + 1}$</li>
+<li>$r_n \in F$</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="定義116">定義1.16</h2>
+<p>ある有限オートマトンで認識される言語を正規言語（<em>regular language</em>）という。</p>
+<ul>
+<li>正規演算（<em>regular operation</em>）
+<ul>
+<li>言語を操作するために特別に設計された演算</li>
+</ul>
+</li>
+</ul>
+<h2 id="定義123">定義1.23</h2>
+<p>$A$ と $B$ を言語とする。正規演算とは、以下のように定義された和集合演算（<em>union</em>）、連結演算（<em>concatenation</em>）、スター演算（<em>star</em>）のいずれかである。</p>
+<ul>
+<li>和集合演算: $A \cup B = \lbrace x \mid x \in A \lor x \in B \rbrace$</li>
+<li>連結演算: $A \circ B = \lbrace xy \mid x \in A \land x \in B \rbrace$</li>
+<li>スター演算: $A^{*} = \lbrace x_1x_2 \ldots x_k \mid k \geq 0 \land x_i \in A \rbrace$</li>
+</ul>
+<h2 id="定理125">定理1.25</h2>
+<p>正規言語のクラスは、和集合演算に関して閉じている。</p>
+<p>言い換えれば、 $A_1$ と $a_2$ が正規言語であれば、 $A_1 \cup A_2$ も正規言語である。</p>
+<ul>
+<li>$A_1$ と $A_2$ が正規なので、 $A_1$ を認識するある有限オートマトン $M_1$ と、 $A_2$ を認識するある有限オートマトン $M_2$ がある
+<ul>
+<li>実際に $M_1$ と $M_2$ から $M$ を構成することによって証明</li>
+<li>$M_1$ と $M_2$ をシミュレートし、どちらかのシミュレーションが受理すれば $M$ としても受理する</li>
+<li>$M_1$ と $M_2$ の状態の対を $M$ の状態として、同時にシミュレート</li>
+</ul>
+</li>
+</ul>
+<h3 id="証明">証明</h3>
+<p>$M_1$ は $A_1$ を認識し、 $M_1 = (Q_1, \Sigma, \delta_1, q_1, F_1)$ であり、 $M_2$ は $A_2$ を認識し、 $M_2 = (Q_2, \Sigma, \delta_2, q_2, F_2)$ とする。</p>
+<ol>
+<li>$Q = \lbrace (r_1, r_2) \mid r_1 \in Q_1 \land r_2 \in Q_2 \rbrace$ とする。これは $Q_1, Q_2$ の<em>Cartesian</em>積であり、 $Q_1 \times Q_2$ と表す。</li>
+<li>アルファベット $\Sigma$ は、 $M_1, M_2$ のアルファベットと同じである。異なるアルファベットを持つ場合は $\Sigma = \Sigma_1 \cup \Sigma_2$ とすればよい。</li>
+<li>遷移関数 $\delta$ は、以下のように定義される。各 $(r_1, r_2) \in Q$ と各 $a \in \Sigma$ に対して、 $\delta((r_1, r_2), a) = (\delta_1(r_1, a), \delta_2(r_2, a))$ とする。</li>
+<li>$q_0$ は 対 $q_1, q_2$ である。</li>
+<li>$F$ は、対の一方が $M_1$ または $M_2$ の受理状態であるような対の集合である。この集合は、$$F = \lbrace (r_1, r_2) \mid r_1 \in F_1 \lor r_2 \in F_2 \rbrace$$ と表される。</li>
+</ol>
+ </div>
+    <footer class="post-footer">
+
+  <div class="post-footer-data">
+            
+<div class="tags">
+  
+</div>
+
+    <div class="date"> 2021-11-06 </div>
+    
+  </div>
+</footer>
+
+
+  
+  
+
+
+
+</article>
+
+  <footer>
+
+  <div class="social-links-footer">
+
+  
+
+  
+  <a href="https://github.com/hobo0xcc" target="_blank"><div class="social-link">GitHub</div></a>
+  
+
+  
+
+  
+  <a href="https://twitter.com/hobo0xcc" target="_blank"><div class="social-link">Twitter</div></a>
+  
+
+  
+
+  <div class="social-link">
+  <a href="https://hobo0xcc.github.io/Blog/index.xml" target="_blank">RSS</a>
+  </div>
+
+</div>
+
+
+  <div class="copyright"> Copyright (c) 2021, all rights reserved. </div>
+
+  <div class="poweredby">
+    
+  </div>
+
+  </footer>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.css" integrity="sha384-zTROYFVGOfTw7JV7KUu8udsvW2fx4lWOsCEDqhBreBwlHI4ioVRtmIvEThzJHGET" crossorigin="anonymous">
+
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.js" integrity="sha384-GxNFqL3r9uRJQhR+47eDxuPoNE7yLftQM8LcxzgS4HT73tp970WS/wV5p8UzCOmb" crossorigin="anonymous"></script>
+
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/contrib/auto-render.min.js" integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl" crossorigin="anonymous"
+        onload="renderMathInElement(document.body);"></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {delimiters: [
+      {left: "$$", right: "$$", display: true},
+      {left: "$", right: "$", display: false}]
+    });
+  });
+</script>
+
+</div> 
+
+</body>
+</html>
+

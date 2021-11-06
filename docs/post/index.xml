@@ -7,7 +7,18 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-JP</language>
     <copyright>Copyright (c) 2021, all rights reserved.</copyright>
-    <lastBuildDate>Sun, 11 Apr 2021 05:18:43 +0900</lastBuildDate><atom:link href="https://hobo0xcc.github.io/Blog/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 06 Nov 2021 09:20:40 +0900</lastBuildDate><atom:link href="https://hobo0xcc.github.io/Blog/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>計算理論の基礎 オートマトンと言語 読書ノート</title>
+      <link>https://hobo0xcc.github.io/Blog/post/theory-comp-1/</link>
+      <pubDate>Sat, 06 Nov 2021 09:20:40 +0900</pubDate>
+      
+      <guid>https://hobo0xcc.github.io/Blog/post/theory-comp-1/</guid>
+      <description>『計算理論の基礎 原著第2版』の読書ノート。
+方針 実はしばらく前に少し読んだのだが、その時は正規言語の途中までやって放置してしまった。今回改めて読み進めるにあたっての方針として、以下を挙げる。
+ 演習問題はできる限り自力で解く 定理と証明は書き写す  進捗  2021/11/06: 開始  第0章 / 序論  オートマトン、計算可能性、複雑さのついての教科書  計算機の本質的な能力とその限界は何か？   計算問題には優しい問題と難しい問題がある  ソーティング問題 &amp;hellip; 優しい スケジューリング問題 &amp;hellip; 難しい   何が、問題の難しさ・やさしさを決めているのだろうか？  いまだに明確な答えが得られていない   計算の困難さに基づいて問題を分類するうまい方法の発見  計算が難しいことの証拠を示すことができる   計算が困難な問題の対処  難しさの根源がどこにあるか 難しい部分の変更によって解決 完全な解を諦めることで解決   初期の暗号  問題は難しいものより簡単な方が望ましい 暗号は難しいほうが望ましい   計算可能性の理論  計算機の理論的モデル   オートマトン理論  計算の数学的モデル    第1章 / 正規言語  計算のモデル（computational model）  有限オートマトン（finite automaton）   Markov連鎖（Markov chain）  有限オートマトンに確率的要素を許す パターンの認識を試みる際に有益 音声処理、光学的文字認識、価格変動のモデル化・予測   有限オートマトンの状態遷移図  開始状態（start state）、受理状態（accept state）、遷移（transition） 入力を処理し、その出力は受理（accept）または拒否（reject）のいずれか一方   有限オートマトンの正式な定義  有限オートマトンは以下の5個のもののリスト  状態の集合 入力アルファベット 動作規則 開始状態 受理状態   動作規則 &amp;hellip; $\delta$ で表される遷移関数を用いる  オートマトンが状態 $x$ にあって $1$ を読み出したときに状態 $y$ へ移る = $\delta(x, 1) = y$      定義1.</description>
+    </item>
+    
     <item>
       <title>情報科学における論理 演習問題</title>
       <link>https://hobo0xcc.github.io/Blog/post/ronri/</link>
